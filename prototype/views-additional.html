@@ -1,0 +1,434 @@
+<!-- Additional Views for TouchCare Prototype -->
+<!-- These should be inserted before the closing </body> tag in index.html -->
+
+<!-- Cases View (Inbox) -->
+<section id="cases-view" class="view">
+    <div class="app-layout">
+        <header class="top-bar">
+            <div class="logo-small">TC</div>
+            <h1 class="page-title">Messages</h1>
+            <div class="top-bar-actions">
+                <button class="icon-button" onclick="app.navigateTo('new-case-view')">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                    </svg>
+                </button>
+                <button class="avatar" onclick="app.navigateTo('settings-view')">
+                    <span>JD</span>
+                </button>
+            </div>
+        </header>
+
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">TC</div>
+                    <h1>TouchCare</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item" onclick="app.navigateTo('dashboard-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                    </svg>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="nav-item active" onclick="app.navigateTo('cases-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                    </svg>
+                    <span>Messages</span>
+                    <span class="badge badge-error">1</span>
+                </a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('documents-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    <span>Documents</span>
+                </a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('wallet-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                    </svg>
+                    <span>Wallet</span>
+                </a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('settings-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                    <span>Account</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Your Cases</h3>
+                        <button class="button button-primary button-sm" onclick="app.navigateTo('new-case-view')">
+                            <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                            </svg>
+                            New Case
+                        </button>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--tc-color-neutral-200); padding-bottom: 1rem;">
+                        <button class="link" style="padding-bottom: 0.5rem; border-bottom: 3px solid var(--color-interactive-primary); margin-bottom: -1rem;">All</button>
+                        <button class="link" style="color: var(--color-text-on-surface-secondary);">Open</button>
+                        <button class="link" style="color: var(--color-text-on-surface-secondary);">Resolved</button>
+                    </div>
+
+                    <div class="cases-list">
+                        <div class="case-item" onclick="app.navigateTo('case-detail-view')">
+                            <div class="case-avatar">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%230095A0'/%3E%3Ctext x='50' y='50' font-size='40' fill='white' text-anchor='middle' dy='.3em' font-family='sans-serif'%3ESJ%3C/text%3E%3C/svg%3E" alt="Agent">
+                            </div>
+                            <div class="case-content">
+                                <div class="case-header-row">
+                                    <h4>Question about dental coverage</h4>
+                                    <span class="badge badge-success badge-sm">Open</span>
+                                </div>
+                                <p class="case-preview">Thank you for reaching out! I'd be happy to help explain your dental coverage limits...</p>
+                                <div class="case-meta">
+                                    <span class="agent-name">Sarah Johnson</span>
+                                    <span class="dot">•</span>
+                                    <span class="time">5 min ago</span>
+                                </div>
+                            </div>
+                            <span class="badge badge-error badge-sm">1</span>
+                        </div>
+
+                        <div class="case-item">
+                            <div class="case-avatar">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%234E6DD6'/%3E%3Ctext x='50' y='50' font-size='40' fill='white' text-anchor='middle' dy='.3em' font-family='sans-serif'%3EMC%3C/text%3E%3C/svg%3E" alt="Agent">
+                            </div>
+                            <div class="case-content">
+                                <div class="case-header-row">
+                                    <h4>Claim status inquiry</h4>
+                                    <span class="badge badge-warning badge-sm">Waiting on you</span>
+                                </div>
+                                <p class="case-preview">I've checked on your claim. Could you please provide the claim reference number?</p>
+                                <div class="case-meta">
+                                    <span class="agent-name">Michael Chen</span>
+                                    <span class="dot">•</span>
+                                    <span class="time">2 days ago</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="case-item">
+                            <div class="case-avatar">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%2310B981'/%3E%3Ctext x='50' y='50' font-size='40' fill='white' text-anchor='middle' dy='.3em' font-family='sans-serif'%3ELT%3C/text%3E%3C/svg%3E" alt="Agent">
+                            </div>
+                            <div class="case-content">
+                                <div class="case-header-row">
+                                    <h4>Benefits enrollment question</h4>
+                                    <span class="badge badge-sm" style="background: var(--tc-color-neutral-200); color: var(--tc-color-neutral-700);">Resolved</span>
+                                </div>
+                                <p class="case-preview">Perfect! I'm glad I could help clarify the enrollment process. Feel free to reach out anytime...</p>
+                                <div class="case-meta">
+                                    <span class="agent-name">Lisa Thompson</span>
+                                    <span class="dot">•</span>
+                                    <span class="time">1 week ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <nav class="bottom-nav">
+            <!-- Same as dashboard bottom nav -->
+            <a href="#" class="nav-item" onclick="app.navigateTo('dashboard-view'); return false;">
+                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-item active" onclick="app.navigateTo('cases-view'); return false;">
+                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                <span>Messages</span>
+                <span class="badge badge-error badge-sm">1</span>
+            </a>
+            <a href="#" class="nav-item" onclick="app.navigateTo('documents-view'); return false;">
+                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span>Documents</span>
+            </a>
+            <a href="#" class="nav-item" onclick="app.navigateTo('wallet-view'); return false;">
+                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+                <span>Wallet</span>
+            </a>
+            <a href="#" class="nav-item" onclick="app.navigateTo('settings-view'); return false;">
+                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <span>Account</span>
+            </a>
+        </nav>
+    </div>
+</section>
+
+<!-- Case Detail View -->
+<section id="case-detail-view" class="view">
+    <div class="app-layout">
+        <header class="top-bar">
+            <button class="icon-button" onclick="app.navigateTo('cases-view')">
+                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+            </button>
+            <h1 class="page-title">Case Details</h1>
+            <div class="top-bar-actions">
+                <button class="avatar" onclick="app.navigateTo('settings-view')">
+                    <span>JD</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="main-content" style="max-width: 900px; margin: 0 auto;">
+            <div class="card" style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                    <div>
+                        <h2 style="font-size: var(--font-size-2xl); margin-bottom: 0.5rem;">Question about dental coverage</h2>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <span class="badge badge-success">Open</span>
+                            <span class="text-secondary" style="font-size: var(--font-size-sm);">Case #12345</span>
+                        </div>
+                    </div>
+                    <button class="button button-tertiary button-sm">
+                        <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        Mark Resolved
+                    </button>
+                </div>
+
+                <div style="background: var(--tc-color-neutral-50); padding: 1rem; border-radius: var(--radius-lg); margin-bottom: 1.5rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%230095A0'/%3E%3Ctext x='50' y='50' font-size='40' fill='white' text-anchor='middle' dy='.3em' font-family='sans-serif'%3ESJ%3C/text%3E%3C/svg%3E" alt="Agent" style="width: 36px; height: 36px; border-radius: var(--radius-full);">
+                        <div>
+                            <div style="font-weight: var(--font-weight-semibold);">Sarah Johnson</div>
+                            <div style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">Benefits Specialist</div>
+                        </div>
+                        <div style="margin-left: auto; display: flex; align-items: center; gap: 0.5rem;">
+                            <div style="width: 8px; height: 8px; background: var(--tc-color-success-500); border-radius: var(--radius-full);"></div>
+                            <span style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">Online</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message Thread -->
+                <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 1.5rem;">
+                    <!-- Member Message -->
+                    <div style="display: flex; gap: 1rem;">
+                        <div class="avatar" style="flex-shrink: 0;">JD</div>
+                        <div style="flex: 1;">
+                            <div style="background: var(--tc-color-indigo-50); padding: 1rem; border-radius: var(--radius-lg);">
+                                <p>Hi, I have a question about my dental coverage limits. I need to get a crown but I'm not sure if it's covered or what my annual maximum is.</p>
+                            </div>
+                            <span style="font-size: var(--font-size-xs); color: var(--color-text-on-surface-secondary); margin-top: 0.5rem; display: block;">2 days ago</span>
+                        </div>
+                    </div>
+
+                    <!-- Agent Message -->
+                    <div style="display: flex; gap: 1rem; flex-direction: row-reverse;">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%230095A0'/%3E%3Ctext x='50' y='50' font-size='40' fill='white' text-anchor='middle' dy='.3em' font-family='sans-serif'%3ESJ%3C/text%3E%3C/svg%3E" alt="Agent" style="width: 40px; height: 40px; border-radius: var(--radius-full); flex-shrink: 0;">
+                        <div style="flex: 1; text-align: right;">
+                            <div style="background: var(--tc-color-neutral-100); padding: 1rem; border-radius: var(--radius-lg); text-align: left;">
+                                <p>Thank you for reaching out! I'd be happy to help explain your dental coverage limits.</p>
+                                <p style="margin-top: 0.5rem;">According to your plan, dental crowns are covered at 50% after your deductible. Your annual maximum for dental coverage is $1,500.</p>
+                                <p style="margin-top: 0.5rem;">I've attached your dental benefits summary for your reference.</p>
+                            </div>
+                            <span style="font-size: var(--font-size-xs); color: var(--color-text-on-surface-secondary); margin-top: 0.5rem; display: block;">2 days ago</span>
+                        </div>
+                    </div>
+
+                    <!-- Member Message -->
+                    <div style="display: flex; gap: 1rem;">
+                        <div class="avatar" style="flex-shrink: 0;">JD</div>
+                        <div style="flex: 1;">
+                            <div style="background: var(--tc-color-indigo-50); padding: 1rem; border-radius: var(--radius-lg);">
+                                <p>That's very helpful, thank you! One more question - has any of my $1,500 annual maximum been used this year?</p>
+                            </div>
+                            <span style="font-size: var(--font-size-xs); color: var(--color-text-on-surface-secondary); margin-top: 0.5rem; display: block;">5 minutes ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message Composer -->
+                <div style="border-top: 1px solid var(--tc-color-neutral-200); padding-top: 1.5rem;">
+                    <textarea placeholder="Type your message..." style="width: 100%; min-height: 80px; padding: 1rem; border: 2px solid var(--tc-color-neutral-200); border-radius: var(--radius-lg); font-family: var(--font-family-body); font-size: var(--font-size-base); resize: vertical;" onfocus="this.style.borderColor='var(--color-interactive-primary)'" onblur="this.style.borderColor='var(--tc-color-neutral-200)'"></textarea>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                        <button class="button button-tertiary button-sm">
+                            <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/>
+                            </svg>
+                            Attach
+                        </button>
+                        <button class="button button-primary button-md" onclick="app.showToast('Message sent!')">
+                            Send Message
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</section>
+
+<!-- Documents View -->
+<section id="documents-view" class="view">
+    <div class="app-layout">
+        <header class="top-bar">
+            <div class="logo-small">TC</div>
+            <h1 class="page-title">Documents</h1>
+            <div class="top-bar-actions">
+                <button class="icon-button">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </button>
+                <button class="icon-button" onclick="app.showToast('Upload document feature')">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                    </svg>
+                </button>
+                <button class="avatar" onclick="app.navigateTo('settings-view')">
+                    <span>JD</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Sidebar same as before -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">TC</div>
+                    <h1>TouchCare</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item" onclick="app.navigateTo('dashboard-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('cases-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                    <span>Messages</span>
+                </a>
+                <a href="#" class="nav-item active" onclick="app.navigateTo('documents-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    <span>Documents</span>
+                </a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('wallet-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+                    <span>Wallet</span>
+                </a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('settings-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    <span>Account</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="card" style="margin-bottom: 1.5rem;">
+                <div style="display: flex; gap: 1rem; border-bottom: 2px solid var(--tc-color-neutral-200); padding-bottom: 1rem;">
+                    <button class="link" style="padding-bottom: 0.5rem; border-bottom: 3px solid var(--color-interactive-primary); margin-bottom: -1rem;">All Documents</button>
+                    <button class="link" style="color: var(--color-text-on-surface-secondary);">Insurance Cards</button>
+                    <button class="link" style="color: var(--color-text-on-surface-secondary);">Claims & EOBs</button>
+                    <button class="link" style="color: var(--color-text-on-surface-secondary);">Policies</button>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Pinned Documents -->
+                <div class="card" style="grid-column: 1 / -1;">
+                    <div class="card-header">
+                        <h3>Pinned Documents</h3>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem;">
+                        <div class="card" style="padding: 1rem; cursor: pointer; transition: all 0.2s; box-shadow: none; border: 2px solid var(--tc-color-neutral-200);" onmouseover="this.style.boxShadow='var(--shadow-md)'; this.style.borderColor='var(--color-interactive-primary)'" onmouseout="this.style.boxShadow='none'; this.style.borderColor='var(--tc-color-neutral-200)'" onclick="app.showToast('Document preview')">
+                            <div style="width: 100%; aspect-ratio: 3/4; background: linear-gradient(135deg, var(--tc-color-indigo-100), var(--tc-color-coral-100)); border-radius: var(--radius-md); margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center;">
+                                <svg class="icon icon-lg" style="color: var(--tc-color-indigo-600);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                                </svg>
+                            </div>
+                            <div style="display: flex; align-items: start; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                <h4 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); flex: 1;">Medical Insurance Card 2025</h4>
+                                <svg class="icon icon-sm" style="color: var(--tc-color-warning-600);" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
+                                </svg>
+                            </div>
+                            <p style="font-size: var(--font-size-xs); color: var(--color-text-on-surface-secondary);">Jan 5, 2025</p>
+                        </div>
+
+                        <div class="card" style="padding: 1rem; cursor: pointer; transition: all 0.2s; box-shadow: none; border: 2px solid var(--tc-color-neutral-200);" onmouseover="this.style.boxShadow='var(--shadow-md)'; this.style.borderColor='var(--color-interactive-primary)'" onmouseout="this.style.boxShadow='none'; this.style.borderColor='var(--tc-color-neutral-200)'" onclick="app.showToast('Document preview')">
+                            <div style="width: 100%; aspect-ratio: 3/4; background: linear-gradient(135deg, var(--tc-color-teal-100), var(--tc-color-indigo-100)); border-radius: var(--radius-md); margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center;">
+                                <svg class="icon icon-lg" style="color: var(--tc-color-teal-700);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                            </div>
+                            <div style="display: flex; align-items: start; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                <h4 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); flex: 1;">2025 Benefits Summary</h4>
+                                <svg class="icon icon-sm" style="color: var(--tc-color-warning-600);" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
+                                </svg>
+                            </div>
+                            <p style="font-size: var(--font-size-xs); color: var(--color-text-on-surface-secondary);">Jan 1, 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Documents -->
+                <div class="card" style="grid-column: 1 / -1;">
+                    <div class="card-header">
+                        <h3>Recent Documents</h3>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem;">
+                        <div class="card" style="padding: 1rem; cursor: pointer; transition: all 0.2s; box-shadow: none; border: 2px solid var(--tc-color-neutral-200);" onmouseover="this.style.boxShadow='var(--shadow-md)'; this.style.borderColor='var(--color-interactive-primary)'" onmouseout="this.style.boxShadow='none'; this.style.borderColor='var(--tc-color-neutral-200)'" onclick="app.showToast('Document preview')">
+                            <div style="width: 100%; aspect-ratio: 3/4; background: linear-gradient(135deg, var(--tc-color-neutral-100), var(--tc-color-neutral-200)); border-radius: var(--radius-md); margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center;">
+                                <svg class="icon icon-lg" style="color: var(--tc-color-neutral-600);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                            </div>
+                            <h4 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); margin-bottom: 0.5rem;">Dental EOB - October 2024</h4>
+                            <p style="font-size: var(--font-size-xs); color: var(--color-text-on-surface-secondary);">Nov 2, 2024</p>
+                        </div>
+
+                        <div class="card" style="padding: 1rem; cursor: pointer; transition: all 0.2s; box-shadow: none; border: 2px solid var(--tc-color-neutral-200);" onmouseover="this.style.boxShadow='var(--shadow-md)'; this.style.borderColor='var(--color-interactive-primary)'" onmouseout="this.style.boxShadow='none'; this.style.borderColor='var(--tc-color-neutral-200)'" onclick="app.showToast('Document preview')">
+                            <div style="width: 100%; aspect-ratio: 3/4; background: linear-gradient(135deg, var(--tc-color-neutral-100), var(--tc-color-neutral-200)); border-radius: var(--radius-md); margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center;">
+                                <svg class="icon icon-lg" style="color: var(--tc-color-neutral-600);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                            </div>
+                            <h4 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); margin-bottom: 0.5rem;">Enrollment Confirmation</h4>
+                            <p style="font-size: var(--font-size-xs); color: var(--color-text-on-surface-secondary);">Oct 15, 2024</p>
+                        </div>
+
+                        <div class="card" style="padding: 1rem; cursor: pointer; transition: all 0.2s; box-shadow: none; border: 2px solid var(--tc-color-neutral-200);" onmouseover="this.style.boxShadow='var(--shadow-md)'; this.style.borderColor='var(--color-interactive-primary)'" onmouseout="this.style.boxShadow='none'; this.style.borderColor='var(--tc-color-neutral-200)'" onclick="app.showToast('Document preview')">
+                            <div style="width: 100%; aspect-ratio: 3/4; background: linear-gradient(135deg, var(--tc-color-neutral-100), var(--tc-color-neutral-200)); border-radius: var(--radius-md); margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center;">
+                                <svg class="icon icon-lg" style="color: var(--tc-color-neutral-600);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                            </div>
+                            <h4 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); margin-bottom: 0.5rem;">Plan Overview 2024</h4>
+                            <p style="font-size: var(--font-size-xs); color: var(--color-text-on-surface-secondary);">Sept 28, 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom nav same as before -->
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item" onclick="app.navigateTo('dashboard-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg><span>Home</span></a>
+            <a href="#" class="nav-item" onclick="app.navigateTo('cases-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg><span>Messages</span></a>
+            <a href="#" class="nav-item active" onclick="app.navigateTo('documents-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Documents</span></a>
+            <a href="#" class="nav-item" onclick="app.navigateTo('wallet-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg><span>Wallet</span></a>
+            <a href="#" class="nav-item" onclick="app.navigateTo('settings-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span>Account</span></a>
+        </nav>
+    </div>
+</section>
+
+<!-- Note: Wallet and Settings views would follow the same pattern -->
+<!-- This file provides the core additional views for the prototype -->
