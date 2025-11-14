@@ -4,14 +4,14 @@
  */
 
 const app = {
-    currentView: 'login-view',
+    currentView: 'dashboard-view',
 
     init() {
         console.log('TouchCare Prototype Initialized');
         this.setupCodeInputs();
         this.setupTaskBar();
-        // Show initial view
-        this.navigateTo('login-view');
+        // Show initial view - Dashboard for demo purposes
+        this.navigateTo('dashboard-view');
     },
 
     // Navigation
