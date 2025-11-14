@@ -1840,11 +1840,11 @@
                                 Export All Documents
                             </button>
 
-                            <button class="button button-secondary button-lg" style="justify-content: flex-start;" onclick="app.showTermsModal()">
+                            <button class="button button-secondary button-lg" style="justify-content: flex-start;" onclick="app.navigateTo('legal-overview-view')">
                                 <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                                 </svg>
-                                Terms and Conditions
+                                Legal & Privacy
                             </button>
 
                             <div style="border-top: 1px solid var(--tc-color-neutral-200); margin: var(--spacing-4) 0;"></div>
@@ -1903,6 +1903,915 @@
         </div>
     </section>
 
+    <!-- Legal Overview View -->
+    <section id="legal-overview-view" class="view">
+        <div class="app-layout">
+            <header class="top-bar">
+                <button class="icon-button" onclick="app.navigateTo('settings-view')">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <h1 class="page-title">Legal & Privacy</h1>
+                <div class="top-bar-actions"></div>
+            </header>
+
+            <main class="main-content">
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div class="card" style="margin-bottom: var(--spacing-6);">
+                        <div style="text-align: center; padding: var(--spacing-8) var(--spacing-4);">
+                            <div style="width: 64px; height: 64px; margin: 0 auto var(--spacing-4); background: linear-gradient(135deg, var(--tc-color-indigo-600), var(--tc-color-teal-600)); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center;">
+                                <svg class="icon" style="width: 32px; height: 32px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                </svg>
+                            </div>
+                            <h2 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-2);">Legal & Privacy Center</h2>
+                            <p style="color: var(--color-text-on-surface-secondary); max-width: 600px; margin: 0 auto;">
+                                Review our policies, terms, and legal information to understand how TouchCare protects your privacy and data.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="margin-bottom: var(--spacing-4);">
+                        <div class="card-header">
+                            <h3>Legal Documents</h3>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: var(--spacing-2);">
+                            <button class="button button-secondary button-lg" style="justify-content: space-between; padding: var(--spacing-4);" onclick="app.navigateTo('terms-view')">
+                                <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+                                    <div style="width: 40px; height: 40px; background: var(--tc-color-indigo-100); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                        <svg class="icon" style="color: var(--tc-color-indigo-600);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                        </svg>
+                                    </div>
+                                    <div style="text-align: left;">
+                                        <div style="font-weight: var(--font-weight-semibold); margin-bottom: 0.25rem;">Terms of Service</div>
+                                        <div style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">Review our terms and conditions</div>
+                                    </div>
+                                </div>
+                                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+
+                            <button class="button button-secondary button-lg" style="justify-content: space-between; padding: var(--spacing-4);" onclick="app.navigateTo('privacy-view')">
+                                <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+                                    <div style="width: 40px; height: 40px; background: var(--tc-color-teal-100); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                        <svg class="icon" style="color: var(--tc-color-teal-600);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                        </svg>
+                                    </div>
+                                    <div style="text-align: left;">
+                                        <div style="font-weight: var(--font-weight-semibold); margin-bottom: 0.25rem;">Privacy Policy</div>
+                                        <div style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">How we collect and protect your data</div>
+                                    </div>
+                                </div>
+                                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+
+                            <button class="button button-secondary button-lg" style="justify-content: space-between; padding: var(--spacing-4);" onclick="app.navigateTo('hipaa-view')">
+                                <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+                                    <div style="width: 40px; height: 40px; background: var(--tc-color-purple-100); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                        <svg class="icon" style="color: var(--tc-color-purple-600);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                        </svg>
+                                    </div>
+                                    <div style="text-align: left;">
+                                        <div style="font-weight: var(--font-weight-semibold); margin-bottom: 0.25rem;">HIPAA Notice</div>
+                                        <div style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">Health information privacy practices</div>
+                                    </div>
+                                </div>
+                                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+
+                            <button class="button button-secondary button-lg" style="justify-content: space-between; padding: var(--spacing-4);" onclick="app.navigateTo('acceptable-use-view')">
+                                <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+                                    <div style="width: 40px; height: 40px; background: var(--tc-color-orange-100); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                        <svg class="icon" style="color: var(--tc-color-orange-600);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                                        </svg>
+                                    </div>
+                                    <div style="text-align: left;">
+                                        <div style="font-weight: var(--font-weight-semibold); margin-bottom: 0.25rem;">Acceptable Use Policy</div>
+                                        <div style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">Guidelines for using TouchCare services</div>
+                                    </div>
+                                </div>
+                                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+
+                            <button class="button button-secondary button-lg" style="justify-content: space-between; padding: var(--spacing-4);" onclick="app.navigateTo('cookie-policy-view')">
+                                <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+                                    <div style="width: 40px; height: 40px; background: var(--tc-color-neutral-200); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                        <svg class="icon" style="color: var(--tc-color-neutral-700);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
+                                        </svg>
+                                    </div>
+                                    <div style="text-align: left;">
+                                        <div style="font-weight: var(--font-weight-semibold); margin-bottom: 0.25rem;">Cookie Policy</div>
+                                        <div style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">How we use cookies and tracking</div>
+                                    </div>
+                                </div>
+                                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div style="padding: var(--spacing-4); text-align: center;">
+                            <p style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary); margin-bottom: var(--spacing-3);">
+                                Questions about our legal policies or privacy practices?
+                            </p>
+                            <button class="button button-tertiary button-sm" onclick="app.showToast('Contact support feature')">
+                                Contact Support
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <!-- Terms of Service View -->
+    <section id="terms-view" class="view">
+        <div class="app-layout">
+            <header class="top-bar">
+                <button class="icon-button" onclick="app.navigateTo('legal-overview-view')">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <h1 class="page-title">Terms of Service</h1>
+                <div class="top-bar-actions"></div>
+            </header>
+
+            <main class="main-content">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="card">
+                        <div style="padding: var(--spacing-6);">
+                            <div style="margin-bottom: var(--spacing-6); padding-bottom: var(--spacing-4); border-bottom: 2px solid var(--tc-color-neutral-200);">
+                                <h2 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-2);">TouchCare Terms of Service</h2>
+                                <p style="color: var(--color-text-on-surface-secondary);">Last Updated: January 15, 2025</p>
+                            </div>
+
+                            <div style="line-height: 1.7;">
+                                <section style="margin-bottom: var(--spacing-6);">
+                                    <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-indigo-600);">1. Acceptance of Terms</h3>
+                                    <p style="margin-bottom: var(--spacing-3);">
+                                        By accessing and using the TouchCare platform ("Service"), you acknowledge that you have read, understood, and agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use our Service.
+                                    </p>
+                                    <p style="margin-bottom: var(--spacing-3);">
+                                        These Terms constitute a legally binding agreement between you ("User," "you," or "your") and TouchCare, Inc. ("TouchCare," "we," "us," or "our").
+                                    </p>
+                                </section>
+
+                                <section style="margin-bottom: var(--spacing-6);">
+                                    <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-indigo-600);">2. Service Description</h3>
+                                    <p style="margin-bottom: var(--spacing-3);">
+                                        TouchCare provides comprehensive healthcare navigation and coordination services, including but not limited to:
+                                    </p>
+                                    <ul style="margin-left: var(--spacing-6); margin-bottom: var(--spacing-3); list-style-type: disc;">
+                                        <li style="margin-bottom: var(--spacing-2);">Benefits navigation and explanation</li>
+                                        <li style="margin-bottom: var(--spacing-2);">Care coordination and health assistance</li>
+                                        <li style="margin-bottom: var(--spacing-2);">Document management and secure storage</li>
+                                        <li style="margin-bottom: var(--spacing-2);">Appointment scheduling and reminders</li>
+                                        <li style="margin-bottom: var(--spacing-2);">Provider network access and referrals</li>
+                                        <li style="margin-bottom: var(--spacing-2);">Health information resources and support</li>
+                                    </ul>
+                                </section>
+
+                                <section style="margin-bottom: var(--spacing-6);">
+                                    <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-indigo-600);">3. User Eligibility</h3>
+                                    <p style="margin-bottom: var(--spacing-3);">
+                                        To use TouchCare, you must:
+                                    </p>
+                                    <ul style="margin-left: var(--spacing-6); margin-bottom: var(--spacing-3); list-style-type: disc;">
+                                        <li style="margin-bottom: var(--spacing-2);">Be at least 18 years of age or have parental/guardian consent</li>
+                                        <li style="margin-bottom: var(--spacing-2);">Provide accurate, current, and complete information during registration</li>
+                                        <li style="margin-bottom: var(--spacing-2);">Maintain and promptly update your account information</li>
+                                        <li style="margin-bottom: var(--spacing-2);">Be authorized to access healthcare services in your jurisdiction</li>
+                                    </ul>
+                                </section>
+
+                                <section style="margin-bottom: var(--spacing-6);">
+                                    <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-indigo-600);">4. User Responsibilities</h3>
+                                    <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">4.1 Account Security</h4>
+                                    <p style="margin-bottom: var(--spacing-3);">
+                                        You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to immediately notify TouchCare of any unauthorized access or security breach.
+                                    </p>
+
+                                    <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">4.2 Accurate Information</h4>
+                                    <p style="margin-bottom: var(--spacing-3);">
+                                        You agree to provide accurate, complete, and current health information. Inaccurate information may affect the quality of care coordination and could have serious health consequences.
+                                    </p>
+
+                                    <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">4.3 Prohibited Activities</h4>
+                                    <p style="margin-bottom: var(--spacing-2);">You agree not to:</p>
+                                    <ul style="margin-left: var(--spacing-6); margin-bottom: var(--spacing-3); list-style-type: disc;">
+                                        <li style="margin-bottom: var(--spacing-2);">Use the Service for any illegal or unauthorized purpose</li>
+                                        <li style="margin-bottom: var(--spacing-2);">Attempt to gain unauthorized access to any portion of the Service</li>
+                                        <li style="margin-bottom: var(--spacing-2);">Interfere with or disrupt the Service or servers</li>
+                                        <li style="margin-bottom: var(--spacing-2);">Share your account credentials with others</li>
+                                        <li style="margin-bottom: var(--spacing-2);">Upload malicious code, viruses, or harmful content</li>
+                                    </ul>
+                                </section>
+
+                                <section style="margin-bottom: var(--spacing-6);">
+                                    <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-indigo-600);">5. Medical Disclaimer</h3>
+                                    <div style="padding: var(--spacing-4); background: var(--tc-color-orange-50); border-left: 4px solid var(--tc-color-orange-600); border-radius: var(--radius-md); margin-bottom: var(--spacing-3);">
+                                        <p style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2);">IMPORTANT MEDICAL DISCLAIMER</p>
+                                        <p>
+                                            TouchCare provides healthcare navigation and coordination services but DOES NOT provide medical advice, diagnosis, or treatment. Our Service is not a substitute for professional medical care.
+                                        </p>
+                                    </div>
+                                    <ul style="margin-left: var(--spacing-6); margin-bottom: var(--spacing-3); list-style-type: disc;">
+                                        <li style="margin-bottom: var(--spacing-2);">Always seek the advice of qualified healthcare providers for medical questions</li>
+                                        <li style="margin-bottom: var(--spacing-2);">Never disregard professional medical advice or delay seeking it because of information from TouchCare</li>
+                                        <li style="margin-bottom: var(--spacing-2);">In case of medical emergency, call 911 or your local emergency number immediately</li>
+                                        <li style="margin-bottom: var(--spacing-2);">TouchCare health assistants are not licensed medical professionals unless explicitly stated</li>
+                                    </ul>
+                                </section>
+
+                                <section style="margin-bottom: var(--spacing-6);">
+                                    <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-indigo-600);">6. Privacy and Data Protection</h3>
+                                    <p style="margin-bottom: var(--spacing-3);">
+                                        Your privacy is important to us. Our collection, use, and disclosure of your personal health information is governed by our Privacy Policy and HIPAA Notice, which are incorporated into these Terms by reference.
+                                    </p>
+                                    <p style="margin-bottom: var(--spacing-3);">
+                                        By using TouchCare, you consent to our collection and use of your information as described in our Privacy Policy.
+                                    </p>
+                                </section>
+
+                                <section style="margin-bottom: var(--spacing-6);">
+                                    <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-indigo-600);">7. Limitation of Liability</h3>
+                                    <p style="margin-bottom: var(--spacing-3);">
+                                        TO THE MAXIMUM EXTENT PERMITTED BY LAW, TOUCHCARE SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES.
+                                    </p>
+                                    <p style="margin-bottom: var(--spacing-3);">
+                                        Our total liability shall not exceed the fees paid by you for the Service in the 12 months preceding the claim, or $100, whichever is greater.
+                                    </p>
+                                </section>
+
+                                <section style="margin-bottom: var(--spacing-6);">
+                                    <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-indigo-600);">8. Modifications to Terms</h3>
+                                    <p style="margin-bottom: var(--spacing-3);">
+                                        We reserve the right to modify these Terms at any time. We will notify you of significant changes via email or through a prominent notice on our Service at least 30 days before the effective date.
+                                    </p>
+                                    <p style="margin-bottom: var(--spacing-3);">
+                                        Your continued use of the Service after changes become effective constitutes acceptance of the modified Terms.
+                                    </p>
+                                </section>
+
+                                <section style="margin-bottom: var(--spacing-6);">
+                                    <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-indigo-600);">9. Termination</h3>
+                                    <p style="margin-bottom: var(--spacing-3);">
+                                        You may terminate your account at any time through your account settings. We may suspend or terminate your access to the Service if you violate these Terms or for any other reason, with or without notice.
+                                    </p>
+                                    <p style="margin-bottom: var(--spacing-3);">
+                                        Upon termination, your right to use the Service will immediately cease. We will retain your data as required by law and our Privacy Policy.
+                                    </p>
+                                </section>
+
+                                <section style="margin-bottom: var(--spacing-6);">
+                                    <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-indigo-600);">10. Contact Information</h3>
+                                    <p style="margin-bottom: var(--spacing-2);">
+                                        For questions about these Terms, please contact us at:
+                                    </p>
+                                    <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-radius: var(--radius-md);">
+                                        <p style="margin-bottom: var(--spacing-1);"><strong>TouchCare, Inc.</strong></p>
+                                        <p style="margin-bottom: var(--spacing-1);">Legal Department</p>
+                                        <p style="margin-bottom: var(--spacing-1);">Email: legal@touchcare.com</p>
+                                        <p>Phone: 1-800-TOUCHCARE</p>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+
+                        <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-top: 1px solid var(--tc-color-neutral-200); display: flex; justify-content: space-between; align-items: center;">
+                            <button class="button button-secondary" onclick="app.navigateTo('legal-overview-view')">
+                                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                                </svg>
+                                Back to Legal
+                            </button>
+                            <button class="button button-tertiary" onclick="app.navigateTo('privacy-view')">
+                                Next: Privacy Policy
+                                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+
+<!-- Privacy Policy View -->
+<section id="privacy-view" class="view">
+    <div class="app-layout">
+        <header class="top-bar">
+            <button class="icon-button" onclick="app.navigateTo('legal-overview-view')">
+                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+            </button>
+            <h1 class="page-title">Privacy Policy</h1>
+            <div class="top-bar-actions"></div>
+        </header>
+
+        <main class="main-content">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="card">
+                    <div style="padding: var(--spacing-6);">
+                        <div style="margin-bottom: var(--spacing-6); padding-bottom: var(--spacing-4); border-bottom: 2px solid var(--tc-color-neutral-200);">
+                            <h2 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-2);">TouchCare Privacy Policy</h2>
+                            <p style="color: var(--color-text-on-surface-secondary);">Last Updated: January 15, 2025</p>
+                        </div>
+
+                        <div style="line-height: 1.7;">
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-teal-600);">1. Introduction</h3>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    TouchCare, Inc. ("we," "us," or "our") is committed to protecting your privacy and personal health information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our healthcare navigation and coordination platform.
+                                </p>
+                                <div style="padding: var(--spacing-4); background: var(--tc-color-teal-50); border-left: 4px solid var(--tc-color-teal-600); border-radius: var(--radius-md);">
+                                    <p style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2);">Your Privacy Rights</p>
+                                    <p>We are committed to HIPAA compliance and protecting your protected health information (PHI) in accordance with federal and state privacy laws.</p>
+                                </div>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-teal-600);">2. Information We Collect</h3>
+
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">2.1 Personal Information</h4>
+                                <ul style="margin-left: var(--spacing-6); margin-bottom: var(--spacing-3); list-style-type: disc;">
+                                    <li style="margin-bottom: var(--spacing-2);">Name, date of birth, contact information</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Government identifiers (e.g., Social Security Number when required)</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Insurance information and policy details</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Payment and billing information</li>
+                                </ul>
+
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">2.2 Health Information</h4>
+                                <ul style="margin-left: var(--spacing-6); margin-bottom: var(--spacing-3); list-style-type: disc;">
+                                    <li style="margin-bottom: var(--spacing-2);">Medical history, conditions, and diagnoses</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Medications, allergies, and treatments</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Healthcare provider information</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Appointment and visit records</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Medical documents and test results</li>
+                                </ul>
+
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">2.3 Usage and Technical Information</h4>
+                                <ul style="margin-left: var(--spacing-6); margin-bottom: var(--spacing-3); list-style-type: disc;">
+                                    <li style="margin-bottom: var(--spacing-2);">Device information, IP address, browser type</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Usage patterns, preferences, and interaction data</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Cookies and similar tracking technologies</li>
+                                </ul>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-teal-600);">3. How We Use Your Information</h3>
+                                <p style="margin-bottom: var(--spacing-2);">We use your information to:</p>
+                                <ul style="margin-left: var(--spacing-6); margin-bottom: var(--spacing-3); list-style-type: disc;">
+                                    <li style="margin-bottom: var(--spacing-2);">Provide healthcare navigation and care coordination services</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Communicate with you about your health and benefits</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Coordinate with your healthcare providers</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Process insurance claims and billing</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Improve our services and develop new features</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Comply with legal and regulatory requirements</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Prevent fraud and ensure platform security</li>
+                                </ul>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-teal-600);">4. Information Sharing and Disclosure</h3>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    We do not sell your personal health information. We may share your information with:
+                                </p>
+
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">4.1 Healthcare Providers</h4>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    With your explicit consent or as permitted by law, we share relevant health information with your healthcare providers to coordinate your care.
+                                </p>
+
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">4.2 Business Associates</h4>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    We may share information with third-party service providers who assist us in operating our platform, subject to HIPAA Business Associate Agreements.
+                                </p>
+
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">4.3 Legal Requirements</h4>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    We may disclose information when required by law, court order, or to protect rights, property, or safety.
+                                </p>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-teal-600);">5. Data Security</h3>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    We implement industry-standard security measures to protect your information:
+                                </p>
+                                <ul style="margin-left: var(--spacing-6); margin-bottom: var(--spacing-3); list-style-type: disc;">
+                                    <li style="margin-bottom: var(--spacing-2);">Encryption of data in transit and at rest</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Secure access controls and authentication</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Regular security audits and assessments</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Employee training on privacy and security</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Incident response and breach notification procedures</li>
+                                </ul>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-teal-600);">6. Your Rights</h3>
+                                <p style="margin-bottom: var(--spacing-2);">You have the right to:</p>
+                                <ul style="margin-left: var(--spacing-6); margin-bottom: var(--spacing-3); list-style-type: disc;">
+                                    <li style="margin-bottom: var(--spacing-2);">Access and receive a copy of your health information</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Request corrections to your information</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Request restrictions on certain uses and disclosures</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Receive confidential communications</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Request an accounting of disclosures</li>
+                                    <li style="margin-bottom: var(--spacing-2);">File a complaint if you believe your privacy rights have been violated</li>
+                                </ul>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-teal-600);">7. Data Retention</h3>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    We retain your information for as long as necessary to provide services and as required by law. Health information is typically retained for a minimum of 7 years after the last service date, in compliance with applicable regulations.
+                                </p>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-teal-600);">8. Contact Us</h3>
+                                <p style="margin-bottom: var(--spacing-2);">For privacy-related questions or to exercise your rights:</p>
+                                <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-radius: var(--radius-md);">
+                                    <p style="margin-bottom: var(--spacing-1);"><strong>Privacy Officer</strong></p>
+                                    <p style="margin-bottom: var(--spacing-1);">TouchCare, Inc.</p>
+                                    <p style="margin-bottom: var(--spacing-1);">Email: privacy@touchcare.com</p>
+                                    <p>Phone: 1-800-TOUCHCARE</p>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+
+                    <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-top: 1px solid var(--tc-color-neutral-200); display: flex; justify-content: space-between; align-items: center;">
+                        <button class="button button-tertiary" onclick="app.navigateTo('terms-view')">
+                            <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                            Previous: Terms of Service
+                        </button>
+                        <button class="button button-tertiary" onclick="app.navigateTo('hipaa-view')">
+                            Next: HIPAA Notice
+                            <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</section>
+
+<!-- HIPAA Notice View -->
+<section id="hipaa-view" class="view">
+    <div class="app-layout">
+        <header class="top-bar">
+            <button class="icon-button" onclick="app.navigateTo('legal-overview-view')">
+                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+            </button>
+            <h1 class="page-title">HIPAA Notice</h1>
+            <div class="top-bar-actions"></div>
+        </header>
+
+        <main class="main-content">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="card">
+                    <div style="padding: var(--spacing-6);">
+                        <div style="margin-bottom: var(--spacing-6); padding-bottom: var(--spacing-4); border-bottom: 2px solid var(--tc-color-neutral-200);">
+                            <h2 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-2);">HIPAA Notice of Privacy Practices</h2>
+                            <p style="color: var(--color-text-on-surface-secondary);">Effective Date: January 15, 2025</p>
+                        </div>
+
+                        <div style="line-height: 1.7;">
+                            <div style="padding: var(--spacing-4); background: var(--tc-color-purple-50); border-left: 4px solid var(--tc-color-purple-600); border-radius: var(--radius-md); margin-bottom: var(--spacing-6);">
+                                <p style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2);">THIS NOTICE DESCRIBES HOW MEDICAL INFORMATION ABOUT YOU MAY BE USED AND DISCLOSED AND HOW YOU CAN GET ACCESS TO THIS INFORMATION. PLEASE REVIEW IT CAREFULLY.</p>
+                            </div>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-purple-600);">Our Commitment to Your Privacy</h3>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    TouchCare is required by law to maintain the privacy of your protected health information (PHI) and to provide you with this Notice of our legal duties and privacy practices. We are committed to protecting your health information and will use and disclose it only as described in this Notice or as authorized by you.
+                                </p>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-purple-600);">How We May Use and Disclose Your Health Information</h3>
+
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">1. Treatment</h4>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    We may use and disclose your PHI to provide, coordinate, or manage your healthcare and related services. This includes coordination with your healthcare providers, specialists, and other care team members.
+                                </p>
+
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">2. Payment</h4>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    We may use and disclose your PHI to obtain payment for services, including billing, claims management, and determining eligibility for benefits.
+                                </p>
+
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">3. Healthcare Operations</h4>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    We may use and disclose your PHI for healthcare operations including quality assessment, case management, business planning, and administrative services.
+                                </p>
+
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">4. Other Permitted Uses</h4>
+                                <ul style="margin-left: var(--spacing-6); margin-bottom: var(--spacing-3); list-style-type: disc;">
+                                    <li style="margin-bottom: var(--spacing-2);">Appointment reminders and health-related communications</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Treatment alternatives or health-related benefits</li>
+                                    <li style="margin-bottom: var(--spacing-2);">As required by law</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Public health activities</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Health oversight activities</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Judicial and administrative proceedings</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Law enforcement purposes</li>
+                                    <li style="margin-bottom: var(--spacing-2);">To avert a serious threat to health or safety</li>
+                                </ul>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-purple-600);">Uses and Disclosures Requiring Your Authorization</h3>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    We will obtain your written authorization before using or disclosing your PHI for purposes other than treatment, payment, healthcare operations, or as otherwise permitted or required by law. You may revoke your authorization at any time in writing, except to the extent we have already taken action in reliance on it.
+                                </p>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-purple-600);">Your Rights Regarding Your Health Information</h3>
+
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">Right to Access</h4>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    You have the right to inspect and obtain a copy of your health information. We may charge a reasonable fee for copying and mailing costs.
+                                </p>
+
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">Right to Amend</h4>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    You have the right to request that we amend your health information if you believe it is incorrect or incomplete.
+                                </p>
+
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">Right to Request Restrictions</h4>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    You have the right to request restrictions on certain uses and disclosures of your health information. We are not required to agree to your request, except in certain circumstances.
+                                </p>
+
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">Right to Confidential Communications</h4>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    You have the right to request that we communicate with you about your health matters in a particular manner or at a certain location.
+                                </p>
+
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">Right to an Accounting</h4>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    You have the right to request an accounting of disclosures of your health information made by us for certain purposes.
+                                </p>
+
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">Right to a Paper Copy</h4>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    You have the right to obtain a paper copy of this Notice at any time upon request.
+                                </p>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-purple-600);">Breach Notification</h3>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    In the case of a breach of your unsecured protected health information, we will notify you as required by law.
+                                </p>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-purple-600);">Complaints</h3>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    If you believe your privacy rights have been violated, you may file a complaint with TouchCare or with the Secretary of the Department of Health and Human Services. You will not be retaliated against for filing a complaint.
+                                </p>
+                                <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-radius: var(--radius-md);">
+                                    <p style="margin-bottom: var(--spacing-1);"><strong>File a Complaint:</strong></p>
+                                    <p style="margin-bottom: var(--spacing-1);">TouchCare Privacy Officer</p>
+                                    <p style="margin-bottom: var(--spacing-1);">Email: privacy@touchcare.com</p>
+                                    <p style="margin-bottom: var(--spacing-1);">Phone: 1-800-TOUCHCARE</p>
+                                    <p style="margin-top: var(--spacing-2);">Or contact the Office for Civil Rights, U.S. Department of Health and Human Services</p>
+                                </div>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-purple-600);">Changes to This Notice</h3>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    We reserve the right to change this Notice and to make the revised or new Notice provisions effective for all health information we already have as well as any we receive in the future. We will post the current Notice on our website and in our facilities.
+                                </p>
+                            </section>
+                        </div>
+                    </div>
+
+                    <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-top: 1px solid var(--tc-color-neutral-200); display: flex; justify-content: space-between; align-items: center;">
+                        <button class="button button-tertiary" onclick="app.navigateTo('privacy-view')">
+                            <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                            Previous: Privacy Policy
+                        </button>
+                        <button class="button button-tertiary" onclick="app.navigateTo('acceptable-use-view')">
+                            Next: Acceptable Use
+                            <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</section>
+
+<!-- Acceptable Use Policy View -->
+<section id="acceptable-use-view" class="view">
+    <div class="app-layout">
+        <header class="top-bar">
+            <button class="icon-button" onclick="app.navigateTo('legal-overview-view')">
+                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+            </button>
+            <h1 class="page-title">Acceptable Use Policy</h1>
+            <div class="top-bar-actions"></div>
+        </header>
+
+        <main class="main-content">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="card">
+                    <div style="padding: var(--spacing-6);">
+                        <div style="margin-bottom: var(--spacing-6); padding-bottom: var(--spacing-4); border-bottom: 2px solid var(--tc-color-neutral-200);">
+                            <h2 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-2);">Acceptable Use Policy</h2>
+                            <p style="color: var(--color-text-on-surface-secondary);">Last Updated: January 15, 2025</p>
+                        </div>
+
+                        <div style="line-height: 1.7;">
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-orange-600);">1. Purpose</h3>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    This Acceptable Use Policy outlines the rules and guidelines for using TouchCare's services. By accessing or using our platform, you agree to comply with this policy and use our services responsibly and ethically.
+                                </p>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-orange-600);">2. Permitted Uses</h3>
+                                <p style="margin-bottom: var(--spacing-2);">You may use TouchCare for:</p>
+                                <ul style="margin-left: var(--spacing-6); margin-bottom: var(--spacing-3); list-style-type: disc;">
+                                    <li style="margin-bottom: var(--spacing-2);">Managing your personal healthcare and benefits</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Communicating with healthcare professionals and support staff</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Accessing healthcare information and resources</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Storing and managing health documents</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Scheduling appointments and managing care coordination</li>
+                                </ul>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-orange-600);">3. Prohibited Activities</h3>
+                                <div style="padding: var(--spacing-4); background: var(--tc-color-orange-50); border-left: 4px solid var(--tc-color-orange-600); border-radius: var(--radius-md); margin-bottom: var(--spacing-3);">
+                                    <p style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2);">The following activities are strictly prohibited:</p>
+                                </div>
+
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">3.1 Illegal Activities</h4>
+                                <ul style="margin-left: var(--spacing-6); margin-bottom: var(--spacing-3); list-style-type: disc;">
+                                    <li style="margin-bottom: var(--spacing-2);">Using the service for any illegal purpose</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Violating any federal, state, or local laws or regulations</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Fraudulent activities, including insurance fraud</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Identity theft or impersonation</li>
+                                </ul>
+
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">3.2 Misuse of Platform</h4>
+                                <ul style="margin-left: var(--spacing-6); margin-bottom: var(--spacing-3); list-style-type: disc;">
+                                    <li style="margin-bottom: var(--spacing-2);">Sharing your account credentials with unauthorized individuals</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Accessing another user's account without permission</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Attempting to circumvent security measures</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Reverse engineering or decompiling the platform</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Automated access or scraping without authorization</li>
+                                </ul>
+
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">3.3 Harmful Content</h4>
+                                <ul style="margin-left: var(--spacing-6); margin-bottom: var(--spacing-3); list-style-type: disc;">
+                                    <li style="margin-bottom: var(--spacing-2);">Uploading malware, viruses, or malicious code</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Transmitting spam or unsolicited communications</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Posting offensive, defamatory, or harassing content</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Sharing false or misleading health information</li>
+                                </ul>
+
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">3.4 System Interference</h4>
+                                <ul style="margin-left: var(--spacing-6); margin-bottom: var(--spacing-3); list-style-type: disc;">
+                                    <li style="margin-bottom: var(--spacing-2);">Interfering with or disrupting the service or servers</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Overloading or attempting to crash the system</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Deploying denial-of-service attacks</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Probing, scanning, or testing system vulnerabilities</li>
+                                </ul>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-orange-600);">4. Account Responsibilities</h3>
+                                <ul style="margin-left: var(--spacing-6); margin-bottom: var(--spacing-3); list-style-type: disc;">
+                                    <li style="margin-bottom: var(--spacing-2);">Maintain accurate and up-to-date account information</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Keep your login credentials confidential and secure</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Immediately report any unauthorized access or security breach</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Accept responsibility for all activities under your account</li>
+                                </ul>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-orange-600);">5. Consequences of Violations</h3>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    Violations of this Acceptable Use Policy may result in:
+                                </p>
+                                <ul style="margin-left: var(--spacing-6); margin-bottom: var(--spacing-3); list-style-type: disc;">
+                                    <li style="margin-bottom: var(--spacing-2);">Warning or notice of violation</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Temporary suspension of your account</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Permanent termination of your account</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Legal action, including referral to law enforcement</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Liability for damages caused by violations</li>
+                                </ul>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-orange-600);">6. Reporting Violations</h3>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    If you become aware of any violation of this policy, please report it immediately to our security team at security@touchcare.com or 1-800-TOUCHCARE.
+                                </p>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-orange-600);">7. Modifications</h3>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    We reserve the right to modify this Acceptable Use Policy at any time. Continued use of the service after changes constitutes acceptance of the modified policy.
+                                </p>
+                            </section>
+                        </div>
+                    </div>
+
+                    <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-top: 1px solid var(--tc-color-neutral-200); display: flex; justify-content: space-between; align-items: center;">
+                        <button class="button button-tertiary" onclick="app.navigateTo('hipaa-view')">
+                            <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                            Previous: HIPAA Notice
+                        </button>
+                        <button class="button button-tertiary" onclick="app.navigateTo('cookie-policy-view')">
+                            Next: Cookie Policy
+                            <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</section>
+
+<!-- Cookie Policy View -->
+<section id="cookie-policy-view" class="view">
+    <div class="app-layout">
+        <header class="top-bar">
+            <button class="icon-button" onclick="app.navigateTo('legal-overview-view')">
+                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+            </button>
+            <h1 class="page-title">Cookie Policy</h1>
+            <div class="top-bar-actions"></div>
+        </header>
+
+        <main class="main-content">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="card">
+                    <div style="padding: var(--spacing-6);">
+                        <div style="margin-bottom: var(--spacing-6); padding-bottom: var(--spacing-4); border-bottom: 2px solid var(--tc-color-neutral-200);">
+                            <h2 style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-2);">Cookie Policy</h2>
+                            <p style="color: var(--color-text-on-surface-secondary);">Last Updated: January 15, 2025</p>
+                        </div>
+
+                        <div style="line-height: 1.7;">
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-neutral-700);">1. What Are Cookies?</h3>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    Cookies are small text files that are placed on your device when you visit our website. They help us provide you with a better experience by remembering your preferences and understanding how you use our service.
+                                </p>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-neutral-700);">2. Types of Cookies We Use</h3>
+
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">2.1 Essential Cookies</h4>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    These cookies are necessary for the website to function and cannot be disabled. They include authentication cookies, security cookies, and session management cookies.
+                                </p>
+
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">2.2 Functional Cookies</h4>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    These cookies enable enhanced functionality and personalization, such as remembering your preferences and settings.
+                                </p>
+
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">2.3 Analytics Cookies</h4>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.
+                                </p>
+
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2); margin-top: var(--spacing-3);">2.4 Performance Cookies</h4>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    These cookies help us improve the performance of our website by tracking loading times and identifying technical issues.
+                                </p>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-neutral-700);">3. How We Use Cookies</h3>
+                                <ul style="margin-left: var(--spacing-6); margin-bottom: var(--spacing-3); list-style-type: disc;">
+                                    <li style="margin-bottom: var(--spacing-2);">Authenticate and secure your account</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Remember your preferences and settings</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Analyze site usage and improve our services</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Provide personalized content and recommendations</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Measure the effectiveness of our communications</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Detect and prevent fraud and abuse</li>
+                                </ul>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-neutral-700);">4. Third-Party Cookies</h3>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    We may use third-party services that set cookies on our behalf. These include:
+                                </p>
+                                <ul style="margin-left: var(--spacing-6); margin-bottom: var(--spacing-3); list-style-type: disc;">
+                                    <li style="margin-bottom: var(--spacing-2);">Analytics providers (e.g., Google Analytics)</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Security and fraud prevention services</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Customer support tools</li>
+                                </ul>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-neutral-700);">5. Managing Cookies</h3>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    You can control and manage cookies in several ways:
+                                </p>
+                                <ul style="margin-left: var(--spacing-6); margin-bottom: var(--spacing-3); list-style-type: disc;">
+                                    <li style="margin-bottom: var(--spacing-2);">Browser settings: Most browsers allow you to refuse or delete cookies</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Cookie preferences: Use our cookie preference center (if available)</li>
+                                    <li style="margin-bottom: var(--spacing-2);">Opt-out tools: Use industry opt-out tools for analytics and advertising</li>
+                                </ul>
+                                <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-left: 4px solid var(--tc-color-neutral-600); border-radius: var(--radius-md); margin-top: var(--spacing-3);">
+                                    <p style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-2);">Important Note</p>
+                                    <p>Blocking or deleting certain cookies may affect the functionality of TouchCare and prevent you from using some features.</p>
+                                </div>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-neutral-700);">6. Updates to This Policy</h3>
+                                <p style="margin-bottom: var(--spacing-3);">
+                                    We may update this Cookie Policy from time to time. We will notify you of any significant changes by posting the new policy on this page and updating the "Last Updated" date.
+                                </p>
+                            </section>
+
+                            <section style="margin-bottom: var(--spacing-6);">
+                                <h3 style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-3); color: var(--tc-color-neutral-700);">7. Contact Us</h3>
+                                <p style="margin-bottom: var(--spacing-2);">
+                                    For questions about our use of cookies:
+                                </p>
+                                <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-radius: var(--radius-md);">
+                                    <p style="margin-bottom: var(--spacing-1);"><strong>TouchCare, Inc.</strong></p>
+                                    <p style="margin-bottom: var(--spacing-1);">Email: privacy@touchcare.com</p>
+                                    <p>Phone: 1-800-TOUCHCARE</p>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+
+                    <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-top: 1px solid var(--tc-color-neutral-200); display: flex; justify-content: space-between; align-items: center;">
+                        <button class="button button-tertiary" onclick="app.navigateTo('acceptable-use-view')">
+                            <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                            Previous: Acceptable Use
+                        </button>
+                        <button class="button button-secondary" onclick="app.navigateTo('legal-overview-view')">
+                            <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                            Back to Legal
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</section>
     <!-- Toast Container -->
     <div id="toast-container" class="toast-container"></div>
 
@@ -1934,69 +2843,6 @@
                     </svg>
                     Yes, Mark as Resolved
                 </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Terms and Conditions Modal -->
-    <div id="terms-modal" class="modal">
-        <div class="modal-overlay" onclick="app.hideTermsModal()"></div>
-        <div class="modal-content" style="max-width: 800px;">
-            <div class="modal-header">
-                <h3>Terms and Conditions</h3>
-                <button class="icon-button" onclick="app.hideTermsModal()">
-                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="modal-body" style="max-height: 60vh; overflow-y: auto;">
-                <h4 style="margin-bottom: 1rem;">TouchCare Assist User Agreement</h4>
-                <p style="margin-bottom: 1rem;">
-                    By using the TouchCare service or clicking "I agree", you agree to be bound by this User Agreement.
-                </p>
-
-                <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: var(--font-weight-semibold);">1. Acceptance of Terms</h5>
-                <p style="margin-bottom: 1rem;">
-                    By accessing and using the TouchCare platform, you acknowledge that you have read, understood, and agree to be bound by these terms and conditions. If you do not agree to these terms, please do not use our services.
-                </p>
-
-                <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: var(--font-weight-semibold);">2. Privacy and Data Protection</h5>
-                <p style="margin-bottom: 1rem;">
-                    TouchCare is committed to protecting your privacy and personal health information. We comply with HIPAA regulations and all applicable data protection laws. Your health information will only be used to provide services and will not be shared without your explicit consent.
-                </p>
-
-                <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: var(--font-weight-semibold);">3. Service Description</h5>
-                <p style="margin-bottom: 1rem;">
-                    TouchCare provides benefits navigation, care coordination, and health assistance services. Our platform offers access to health assistants, document management, appointment scheduling, and additional clinical services.
-                </p>
-
-                <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: var(--font-weight-semibold);">4. User Responsibilities</h5>
-                <p style="margin-bottom: 1rem;">
-                    You agree to provide accurate and complete information, maintain the confidentiality of your account credentials, and notify us immediately of any unauthorized access. You are responsible for all activities under your account.
-                </p>
-
-                <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: var(--font-weight-semibold);">5. Medical Disclaimer</h5>
-                <p style="margin-bottom: 1rem;">
-                    TouchCare provides information and navigation services but does not provide medical advice, diagnosis, or treatment. Always seek the advice of qualified healthcare providers with questions regarding medical conditions. In case of emergency, call 911 immediately.
-                </p>
-
-                <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: var(--font-weight-semibold);">6. Limitation of Liability</h5>
-                <p style="margin-bottom: 1rem;">
-                    TouchCare shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of our services. Our total liability shall not exceed the fees paid for services in the past 12 months.
-                </p>
-
-                <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: var(--font-weight-semibold);">7. Changes to Terms</h5>
-                <p style="margin-bottom: 1rem;">
-                    We reserve the right to modify these terms at any time. Continued use of our services after changes constitutes acceptance of the modified terms. We will notify you of significant changes via email or platform notification.
-                </p>
-
-                <p style="margin-top: 2rem; font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">
-                    Last updated: January 2025
-                </p>
-            </div>
-            <div class="modal-footer">
-                <button class="button button-primary" onclick="app.hideTermsModal()">Close</button>
             </div>
         </div>
     </div>
