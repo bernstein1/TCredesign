@@ -151,6 +151,260 @@ const app = {
         this.showToast('Notifications panel coming soon!');
     },
 
+    // Case resolution confirmation
+    showResolveCaseDialog() {
+        const modal = document.getElementById('resolve-case-modal');
+        if (modal) {
+            modal.classList.add('active');
+        }
+    },
+
+    hideResolveCaseDialog() {
+        const modal = document.getElementById('resolve-case-modal');
+        if (modal) {
+            modal.classList.remove('active');
+        }
+    },
+
+    confirmResolveCase() {
+        this.hideResolveCaseDialog();
+        this.showToast('Case marked as resolved');
+        setTimeout(() => {
+            this.navigateTo('cases-view');
+        }, 1000);
+    },
+
+    // Terms and Conditions modal
+    showTermsModal() {
+        const modal = document.getElementById('terms-modal');
+        if (modal) {
+            modal.classList.add('active');
+        }
+    },
+
+    hideTermsModal() {
+        const modal = document.getElementById('terms-modal');
+        if (modal) {
+            modal.classList.remove('active');
+        }
+    },
+
+    // Wallet tab switching
+    switchWalletTab(tabName) {
+        // Hide all wallet tabs
+        document.querySelectorAll('.wallet-tab-content').forEach(tab => {
+            tab.style.display = 'none';
+        });
+
+        // Show selected tab
+        const selectedTab = document.getElementById(`wallet-${tabName}-tab`);
+        if (selectedTab) {
+            selectedTab.style.display = 'block';
+        }
+
+        // Update tab button states
+        const walletView = document.getElementById('wallet-view');
+        if (walletView) {
+            const tabs = walletView.querySelectorAll('.tabs .tab');
+            tabs.forEach((tab, index) => {
+                tab.classList.remove('active');
+            });
+
+            // Determine which tab index to activate
+            const tabIndex = {
+                'cards': 0,
+                'medical-id': 1,
+                'payment': 2,
+                'fsa': 3
+            }[tabName];
+
+            if (tabs[tabIndex]) {
+                tabs[tabIndex].classList.add('active');
+            }
+        }
+    },
+
+    // Settings tab switching
+    switchSettingsTab(tabName) {
+        // For now, just show a toast (we only implemented security tab)
+        if (tabName === 'security') {
+            document.getElementById('security-tab').style.display = 'block';
+            this.showToast('Security settings');
+        } else {
+            this.showToast(`${tabName.charAt(0).toUpperCase() + tabName.slice(1)} settings coming soon`);
+        }
+    },
+
+    // Provider Modal
+    showProviderModal() {
+        const modal = document.getElementById('provider-modal');
+        if (modal) {
+            modal.classList.add('active');
+        }
+    },
+
+    hideProviderModal() {
+        const modal = document.getElementById('provider-modal');
+        if (modal) {
+            modal.classList.remove('active');
+        }
+    },
+
+    saveProvider() {
+        this.hideProviderModal();
+        this.showToast('Provider saved successfully');
+    },
+
+    // Emergency Contact Modal
+    showEmergencyContactModal() {
+        const modal = document.getElementById('emergency-contact-modal');
+        if (modal) {
+            modal.classList.add('active');
+        }
+    },
+
+    hideEmergencyContactModal() {
+        const modal = document.getElementById('emergency-contact-modal');
+        if (modal) {
+            modal.classList.remove('active');
+        }
+    },
+
+    saveEmergencyContact() {
+        this.hideEmergencyContactModal();
+        this.showToast('Emergency contact saved successfully');
+    },
+
+    // Medical Condition Modal
+    showConditionModal() {
+        const modal = document.getElementById('condition-modal');
+        if (modal) {
+            modal.classList.add('active');
+        }
+    },
+
+    hideConditionModal() {
+        const modal = document.getElementById('condition-modal');
+        if (modal) {
+            modal.classList.remove('active');
+        }
+    },
+
+    saveCondition() {
+        this.hideConditionModal();
+        this.showToast('Medical condition saved successfully');
+    },
+
+    // Medication Modal
+    showMedicationModal() {
+        const modal = document.getElementById('medication-modal');
+        if (modal) {
+            modal.classList.add('active');
+        }
+    },
+
+    hideMedicationModal() {
+        const modal = document.getElementById('medication-modal');
+        if (modal) {
+            modal.classList.remove('active');
+        }
+    },
+
+    saveMedication() {
+        this.hideMedicationModal();
+        this.showToast('Medication saved successfully');
+    },
+
+    // Allergy Modal
+    showAllergyModal() {
+        const modal = document.getElementById('allergy-modal');
+        if (modal) {
+            modal.classList.add('active');
+        }
+    },
+
+    hideAllergyModal() {
+        const modal = document.getElementById('allergy-modal');
+        if (modal) {
+            modal.classList.remove('active');
+        }
+    },
+
+    saveAllergy() {
+        this.hideAllergyModal();
+        this.showToast('Allergy information saved successfully');
+    },
+
+    // Document Upload Simulation
+    simulateDocumentUpload() {
+        const progressArea = document.getElementById('upload-progress-area');
+        const progressList = document.getElementById('upload-progress-list');
+
+        if (!progressArea || !progressList) return;
+
+        // Show progress area
+        progressArea.style.display = 'block';
+
+        // Create sample file names
+        const fileName = 'Insurance_Card_2024.pdf';
+
+        // Create upload item
+        const uploadItem = document.createElement('div');
+        uploadItem.style.padding = 'var(--spacing-4)';
+        uploadItem.style.background = 'var(--tc-color-neutral-50)';
+        uploadItem.style.borderRadius = 'var(--radius-md)';
+        uploadItem.innerHTML = `
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                <div style="display: flex; align-items: center; gap: var(--spacing-2); flex: 1;">
+                    <svg class="icon icon-sm" style="color: var(--tc-color-indigo-600);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                    </svg>
+                    <div style="flex: 1;">
+                        <div style="font-weight: var(--font-weight-semibold); font-size: var(--font-size-sm); margin-bottom: 0.25rem;">${fileName}</div>
+                        <div class="upload-status" style="font-size: var(--font-size-xs); color: var(--color-text-on-surface-secondary);">Uploading...</div>
+                    </div>
+                </div>
+                <div class="upload-percentage" style="font-weight: var(--font-weight-semibold); color: var(--tc-color-indigo-600);">0%</div>
+            </div>
+            <div style="width: 100%; height: 6px; background: var(--tc-color-neutral-200); border-radius: 3px; overflow: hidden;">
+                <div class="upload-progress-bar" style="width: 0%; height: 100%; background: linear-gradient(90deg, var(--tc-color-indigo-600), var(--tc-color-teal-600)); transition: width 0.3s ease;"></div>
+            </div>
+        `;
+
+        progressList.appendChild(uploadItem);
+
+        // Simulate upload progress
+        const progressBar = uploadItem.querySelector('.upload-progress-bar');
+        const percentage = uploadItem.querySelector('.upload-percentage');
+        const status = uploadItem.querySelector('.upload-status');
+
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += Math.random() * 30;
+            if (progress > 100) progress = 100;
+
+            progressBar.style.width = `${progress}%`;
+            percentage.textContent = `${Math.round(progress)}%`;
+
+            if (progress >= 100) {
+                clearInterval(interval);
+                status.textContent = 'Upload complete!';
+                status.style.color = 'var(--tc-color-success-600)';
+                percentage.style.color = 'var(--tc-color-success-600)';
+                progressBar.style.background = 'var(--tc-color-success-600)';
+
+                // Show success toast
+                this.showToast(`${fileName} uploaded successfully`);
+
+                // Hide progress area after 3 seconds
+                setTimeout(() => {
+                    progressArea.style.display = 'none';
+                    progressList.innerHTML = '';
+                }, 3000);
+            }
+        }, 200);
+    },
+
     // Toast notifications
     showToast(message, type = 'success') {
         const container = document.getElementById('toast-container');

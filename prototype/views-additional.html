@@ -59,6 +59,24 @@
                     </svg>
                     <span>Account</span>
                 </a>
+
+                <div style="padding: var(--spacing-4) var(--spacing-4) var(--spacing-2); margin-top: var(--spacing-4); border-top: 1px solid var(--tc-color-neutral-200);">
+                    <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-on-surface-secondary); margin-bottom: var(--spacing-2);">Services</div>
+                </div>
+
+                <a href="#" class="nav-item" onclick="app.navigateTo('get-scheduled-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <span>Appointments</span>
+                </a>
+
+                <a href="#" class="nav-item" onclick="app.navigateTo('additional-services-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                    </svg>
+                    <span>Services</span>
+                </a>
             </nav>
         </aside>
 
@@ -93,6 +111,7 @@
                                 </div>
                                 <p class="case-preview">Thank you for reaching out! I'd be happy to help explain your dental coverage limits...</p>
                                 <div class="case-meta">
+                                    <span class="badge badge-sm" style="background: var(--tc-color-indigo-100); color: var(--tc-color-indigo-700); margin-right: 0.5rem;">Dental Benefits</span>
                                     <span class="agent-name">Sarah Johnson</span>
                                     <span class="dot">•</span>
                                     <span class="time">5 min ago</span>
@@ -112,6 +131,7 @@
                                 </div>
                                 <p class="case-preview">I've checked on your claim. Could you please provide the claim reference number?</p>
                                 <div class="case-meta">
+                                    <span class="badge badge-sm" style="background: var(--tc-color-teal-100); color: var(--tc-color-teal-700); margin-right: 0.5rem;">Billing Help</span>
                                     <span class="agent-name">Michael Chen</span>
                                     <span class="dot">•</span>
                                     <span class="time">2 days ago</span>
@@ -130,6 +150,7 @@
                                 </div>
                                 <p class="case-preview">Perfect! I'm glad I could help clarify the enrollment process. Feel free to reach out anytime...</p>
                                 <div class="case-meta">
+                                    <span class="badge badge-sm" style="background: var(--tc-color-coral-100); color: var(--tc-color-coral-700); margin-right: 0.5rem;">Plan Selection Help</span>
                                     <span class="agent-name">Lisa Thompson</span>
                                     <span class="dot">•</span>
                                     <span class="time">1 week ago</span>
@@ -177,7 +198,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                 </svg>
             </button>
-            <h1 class="page-title">Case Details</h1>
+            <h1 class="page-title">Back to Messages</h1>
             <div class="top-bar-actions">
                 <button class="avatar" onclick="app.navigateTo('settings-view')">
                     <span>JD</span>
@@ -192,14 +213,15 @@
                         <h2 style="font-size: var(--font-size-2xl); margin-bottom: 0.5rem;">Question about dental coverage</h2>
                         <div style="display: flex; align-items: center; gap: 1rem;">
                             <span class="badge badge-success">Open</span>
+                            <span class="badge badge-sm" style="background: var(--tc-color-indigo-100); color: var(--tc-color-indigo-700);">Dental Benefits</span>
                             <span class="text-secondary" style="font-size: var(--font-size-sm);">Case #12345</span>
                         </div>
                     </div>
-                    <button class="button button-tertiary button-sm">
+                    <button class="button button-primary button-sm" onclick="app.showResolveCaseDialog()">
                         <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
-                        Mark Resolved
+                        Mark as Resolved
                     </button>
                 </div>
 
@@ -327,6 +349,24 @@
                     <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                     <span>Account</span>
                 </a>
+
+                <div style="padding: var(--spacing-4) var(--spacing-4) var(--spacing-2); margin-top: var(--spacing-4); border-top: 1px solid var(--tc-color-neutral-200);">
+                    <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-on-surface-secondary); margin-bottom: var(--spacing-2);">Services</div>
+                </div>
+
+                <a href="#" class="nav-item" onclick="app.navigateTo('get-scheduled-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <span>Appointments</span>
+                </a>
+
+                <a href="#" class="nav-item" onclick="app.navigateTo('additional-services-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                    </svg>
+                    <span>Services</span>
+                </a>
             </nav>
         </aside>
 
@@ -337,6 +377,57 @@
                     <button class="link" style="color: var(--color-text-on-surface-secondary);">Insurance Cards</button>
                     <button class="link" style="color: var(--color-text-on-surface-secondary);">Claims & EOBs</button>
                     <button class="link" style="color: var(--color-text-on-surface-secondary);">Policies</button>
+                </div>
+            </div>
+
+            <!-- Upload Document Area -->
+            <div class="card" style="margin-bottom: 1.5rem; border: 2px dashed var(--tc-color-neutral-300); background: var(--tc-color-neutral-50); cursor: pointer; transition: all 0.2s;" onclick="app.simulateDocumentUpload()" onmouseover="this.style.borderColor='var(--color-interactive-primary)'; this.style.background='var(--tc-color-indigo-50)'" onmouseout="this.style.borderColor='var(--tc-color-neutral-300)'; this.style.background='var(--tc-color-neutral-50)'">
+                <div style="text-align: center; padding: var(--spacing-8);">
+                    <svg class="icon icon-lg" style="color: var(--tc-color-indigo-600); margin-bottom: var(--spacing-4);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                    </svg>
+                    <h3 style="margin-bottom: 0.5rem; color: var(--tc-color-indigo-700);">Upload Documents</h3>
+                    <p style="color: var(--color-text-on-surface-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-4);">Drag and drop files here, or click to browse</p>
+                    <p style="color: var(--color-text-on-surface-secondary); font-size: var(--font-size-xs);">Supported: PDF, JPG, PNG (Max 10MB)</p>
+                </div>
+            </div>
+
+            <!-- Upload Progress Area (Hidden by default) -->
+            <div id="upload-progress-area" class="card" style="margin-bottom: 1.5rem; display: none;">
+                <div class="card-header">
+                    <h3>Uploading Documents</h3>
+                </div>
+                <div id="upload-progress-list" style="display: flex; flex-direction: column; gap: var(--spacing-3);"></div>
+            </div>
+
+            <!-- Understanding Plan Documents Panel -->
+            <div class="card" style="margin-bottom: 1.5rem; background: linear-gradient(135deg, var(--tc-color-indigo-50), var(--tc-color-teal-50));">
+                <div class="card-header">
+                    <h3>Understanding Your Plan Documents</h3>
+                    <button class="button button-primary button-sm" onclick="app.showToast('Opening document help assistant')">
+                        <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        Ask a Question
+                    </button>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-4);">
+                    <div style="padding: var(--spacing-4); background: white; border-radius: var(--radius-md);">
+                        <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: 0.5rem; color: var(--tc-color-indigo-700);">Deductible</h4>
+                        <p style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">The amount you pay for covered health care services before your insurance plan starts to pay.</p>
+                    </div>
+                    <div style="padding: var(--spacing-4); background: white; border-radius: var(--radius-md);">
+                        <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: 0.5rem; color: var(--tc-color-indigo-700);">Co-pay</h4>
+                        <p style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">A fixed amount you pay for a covered health care service, usually when you receive the service.</p>
+                    </div>
+                    <div style="padding: var(--spacing-4); background: white; border-radius: var(--radius-md);">
+                        <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: 0.5rem; color: var(--tc-color-indigo-700);">Co-insurance</h4>
+                        <p style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">Your share of the costs of a covered service, calculated as a percentage of the allowed amount.</p>
+                    </div>
+                    <div style="padding: var(--spacing-4); background: white; border-radius: var(--radius-md);">
+                        <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: 0.5rem; color: var(--tc-color-indigo-700);">Out-of-Pocket Maximum</h4>
+                        <p style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">The most you pay during a policy period before your insurance pays 100% of the allowed amount.</p>
+                    </div>
                 </div>
             </div>
 
@@ -424,6 +515,306 @@
             <a href="#" class="nav-item" onclick="app.navigateTo('dashboard-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg><span>Home</span></a>
             <a href="#" class="nav-item" onclick="app.navigateTo('cases-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg><span>Messages</span></a>
             <a href="#" class="nav-item active" onclick="app.navigateTo('documents-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Documents</span></a>
+            <a href="#" class="nav-item" onclick="app.navigateTo('wallet-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg><span>Wallet</span></a>
+            <a href="#" class="nav-item" onclick="app.navigateTo('settings-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span>Account</span></a>
+        </nav>
+    </div>
+</section>
+
+<!-- Get Scheduled View -->
+<section id="get-scheduled-view" class="view">
+    <div class="app-layout">
+        <header class="top-bar">
+            <div class="logo-small">TC</div>
+            <h1 class="page-title">Get Scheduled</h1>
+            <div class="top-bar-actions">
+                <button class="avatar" onclick="app.navigateTo('settings-view')">
+                    <span>JD</span>
+                </button>
+            </div>
+        </header>
+
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">TC</div>
+                    <h1>TouchCare</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item" onclick="app.navigateTo('dashboard-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg><span>Home</span></a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('cases-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg><span>Messages</span></a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('documents-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Documents</span></a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('wallet-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg><span>Wallet</span></a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('settings-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span>Account</span></a>
+
+                <div style="padding: var(--spacing-4) var(--spacing-4) var(--spacing-2); margin-top: var(--spacing-4); border-top: 1px solid var(--tc-color-neutral-200);">
+                    <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-on-surface-secondary); margin-bottom: var(--spacing-2);">Services</div>
+                </div>
+
+                <a href="#" class="nav-item active" onclick="app.navigateTo('get-scheduled-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <span>Appointments</span>
+                </a>
+
+                <a href="#" class="nav-item" onclick="app.navigateTo('additional-services-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                    </svg>
+                    <span>Services</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <p style="color: var(--color-text-on-surface-secondary); margin-bottom: 2rem;">Schedule a consultation with one of our health assistants to get personalized help with your benefits.</p>
+
+                <!-- Consultation Types -->
+                <div style="display: grid; gap: 1.5rem; margin-bottom: 2rem;">
+                    <!-- Benefit Refresher -->
+                    <div class="card" style="border: 2px solid var(--tc-color-indigo-200);">
+                        <div style="display: flex; gap: 1.5rem; align-items: start;">
+                            <div style="flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, var(--tc-color-indigo-600), var(--tc-color-indigo-800)); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;">
+                                <svg class="icon icon-lg" style="color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                            </div>
+                            <div style="flex: 1;">
+                                <h3 style="margin-bottom: 0.5rem;">Benefit Refresher</h3>
+                                <p style="color: var(--color-text-on-surface-secondary); margin-bottom: 1rem;">Review your health plan benefits, coverage details, and how to maximize your plan's value.</p>
+                                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                    <span style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);"><svg class="icon icon-sm" style="display: inline; margin-right: 0.25rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>30 minutes</span>
+                                    <span style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);"><svg class="icon icon-sm" style="display: inline; margin-right: 0.25rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>Phone or Video</span>
+                                </div>
+                            </div>
+                            <button class="button button-primary" onclick="app.showToast('Booking Benefit Refresher consultation')">Book Now</button>
+                        </div>
+                    </div>
+
+                    <!-- RxCare -->
+                    <div class="card" style="border: 2px solid var(--tc-color-teal-200);">
+                        <div style="display: flex; gap: 1.5rem; align-items: start;">
+                            <div style="flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, var(--tc-color-teal-600), var(--tc-color-teal-800)); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;">
+                                <svg class="icon icon-lg" style="color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                                </svg>
+                            </div>
+                            <div style="flex: 1;">
+                                <h3 style="margin-bottom: 0.5rem;">RxCare - Prescription Review</h3>
+                                <p style="color: var(--color-text-on-surface-secondary); margin-bottom: 1rem;">Get help understanding your prescription coverage, finding lower-cost alternatives, and managing medications.</p>
+                                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                    <span style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);"><svg class="icon icon-sm" style="display: inline; margin-right: 0.25rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>45 minutes</span>
+                                    <span style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);"><svg class="icon icon-sm" style="display: inline; margin-right: 0.25rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>Phone or Video</span>
+                                </div>
+                            </div>
+                            <button class="button button-primary" onclick="app.showToast('Booking RxCare consultation')">Book Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Medicare -->
+                    <div class="card" style="border: 2px solid var(--tc-color-coral-200);">
+                        <div style="display: flex; gap: 1.5rem; align-items: start;">
+                            <div style="flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, var(--tc-color-coral-600), var(--tc-color-coral-700)); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;">
+                                <svg class="icon icon-lg" style="color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                                </svg>
+                            </div>
+                            <div style="flex: 1;">
+                                <h3 style="margin-bottom: 0.5rem;">Medicare Consultation</h3>
+                                <p style="color: var(--color-text-on-surface-secondary); margin-bottom: 1rem;">Navigate Medicare enrollment, understand your options, and get help choosing the right plan for your needs.</p>
+                                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                    <span style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);"><svg class="icon icon-sm" style="display: inline; margin-right: 0.25rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>60 minutes</span>
+                                    <span style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);"><svg class="icon icon-sm" style="display: inline; margin-right: 0.25rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>Phone or Video</span>
+                                </div>
+                            </div>
+                            <button class="button button-primary" onclick="app.showToast('Booking Medicare consultation')">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Something Else -->
+                <div class="card" style="background: var(--tc-color-neutral-50); border: 2px solid var(--tc-color-neutral-200);">
+                    <h3 style="margin-bottom: 1rem;">Something else?</h3>
+                    <p style="color: var(--color-text-on-surface-secondary); margin-bottom: 1.5rem;">If your needs don't fit these consultation types, connect with a health assistant who can help.</p>
+                    <button class="button button-secondary" onclick="app.navigateTo('cases-view')">
+                        <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                        </svg>
+                        Open a Case
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item" onclick="app.navigateTo('dashboard-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg><span>Home</span></a>
+            <a href="#" class="nav-item" onclick="app.navigateTo('cases-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg><span>Messages</span></a>
+            <a href="#" class="nav-item" onclick="app.navigateTo('documents-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Documents</span></a>
+            <a href="#" class="nav-item" onclick="app.navigateTo('wallet-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg><span>Wallet</span></a>
+            <a href="#" class="nav-item" onclick="app.navigateTo('settings-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span>Account</span></a>
+        </nav>
+    </div>
+</section>
+
+<!-- Additional Services View -->
+<section id="additional-services-view" class="view">
+    <div class="app-layout">
+        <header class="top-bar">
+            <div class="logo-small">TC</div>
+            <h1 class="page-title">Additional Services</h1>
+            <div class="top-bar-actions">
+                <button class="avatar" onclick="app.navigateTo('settings-view')">
+                    <span>JD</span>
+                </button>
+            </div>
+        </header>
+
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">TC</div>
+                    <h1>TouchCare</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item" onclick="app.navigateTo('dashboard-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg><span>Home</span></a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('cases-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg><span>Messages</span></a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('documents-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Documents</span></a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('wallet-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg><span>Wallet</span></a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('settings-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span>Account</span></a>
+
+                <div style="padding: var(--spacing-4) var(--spacing-4) var(--spacing-2); margin-top: var(--spacing-4); border-top: 1px solid var(--tc-color-neutral-200);">
+                    <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-on-surface-secondary); margin-bottom: var(--spacing-2);">Services</div>
+                </div>
+
+                <a href="#" class="nav-item" onclick="app.navigateTo('get-scheduled-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <span>Appointments</span>
+                </a>
+
+                <a href="#" class="nav-item active" onclick="app.navigateTo('additional-services-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                    </svg>
+                    <span>Services</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <p style="color: var(--color-text-on-surface-secondary); margin-bottom: 2rem;">Access premium clinical services included with your plan to support your health and wellbeing.</p>
+
+                <!-- MD Opinions -->
+                <div class="card" style="margin-bottom: 1.5rem;">
+                    <div style="display: flex; gap: 1.5rem; align-items: start;">
+                        <div style="flex-shrink: 0; width: 80px; height: 80px; background: linear-gradient(135deg, var(--tc-color-indigo-600), var(--tc-color-indigo-900)); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;">
+                            <svg class="icon" style="color: white; width: 40px; height: 40px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+                        <div style="flex: 1;">
+                            <h2 style="margin-bottom: 0.5rem;">MD Opinions</h2>
+                            <p style="color: var(--color-text-on-surface-secondary); margin-bottom: 1rem;">Get a second medical opinion from top specialists for complex diagnoses or treatment decisions. Our board-certified physicians review your case and provide expert insights.</p>
+                            <div style="background: var(--tc-color-indigo-50); padding: var(--spacing-4); border-radius: var(--radius-md); margin-bottom: 1rem;">
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: 0.5rem;">How it works:</h4>
+                                <ol style="margin-left: 1.5rem; color: var(--color-text-on-surface-secondary);">
+                                    <li>Submit your medical records and diagnosis</li>
+                                    <li>Our team matches you with a specialist</li>
+                                    <li>Receive comprehensive review within 3-5 business days</li>
+                                    <li>Schedule follow-up call to discuss findings</li>
+                                </ol>
+                            </div>
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
+                                <a href="tel:1-800-555-0123" style="color: var(--tc-color-indigo-600); font-size: var(--font-size-sm); text-decoration: none;">
+                                    <svg class="icon icon-sm" style="display: inline; margin-right: 0.25rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                                    1-800-555-0123
+                                </a>
+                            </div>
+                            <div style="display: flex; gap: var(--spacing-3); flex-wrap: wrap;">
+                                <button class="button button-primary" onclick="app.showToast('Starting MD Opinions request')">Get Started</button>
+                                <button class="button button-secondary" onclick="app.showToast('Viewing MD Opinions details')">About</button>
+                                <button class="button button-tertiary" onclick="app.showToast('Viewing plan details')">Plan Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MindCare -->
+                <div class="card" style="margin-bottom: 1.5rem;">
+                    <div style="display: flex; gap: 1.5rem; align-items: start;">
+                        <div style="flex-shrink: 0; width: 80px; height: 80px; background: linear-gradient(135deg, var(--tc-color-teal-600), var(--tc-color-teal-800)); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;">
+                            <svg class="icon" style="color: white; width: 40px; height: 40px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                            </svg>
+                        </div>
+                        <div style="flex: 1;">
+                            <h2 style="margin-bottom: 0.5rem;">MindCare</h2>
+                            <p style="color: var(--color-text-on-surface-secondary); margin-bottom: 1rem;">Connect with licensed therapists and counselors for confidential mental health support. Your account is pre-registered and ready to use.</p>
+                            <div style="background: var(--tc-color-teal-50); padding: var(--spacing-4); border-radius: var(--radius-md); margin-bottom: 1rem;">
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: 0.5rem;">Getting started:</h4>
+                                <ol style="margin-left: 1.5rem; color: var(--color-text-on-surface-secondary);">
+                                    <li>Claim your pre-registered account with full name and DOB</li>
+                                    <li>Complete a brief intake questionnaire</li>
+                                    <li>Get matched with a licensed counselor</li>
+                                    <li>Schedule your first session</li>
+                                </ol>
+                            </div>
+                            <div style="background: var(--tc-color-info-50); padding: var(--spacing-3); border-radius: var(--radius-md); border-left: 4px solid var(--tc-color-info-500); margin-bottom: 1rem;">
+                                <p style="font-size: var(--font-size-sm); color: var(--tc-color-info-700);"><strong>For dependents:</strong> Set up separate accounts for family members by providing their name and date of birth.</p>
+                            </div>
+                            <div style="display: flex; gap: var(--spacing-3); flex-wrap: wrap;">
+                                <button class="button button-primary" onclick="app.showToast('Starting MindCare registration')">Get Started</button>
+                                <button class="button button-secondary" onclick="app.showToast('Viewing MindCare information')">More Info</button>
+                                <button class="button button-tertiary" onclick="app.showToast('How to set up dependent accounts')">Dependent Setup</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VirtualCare -->
+                <div class="card">
+                    <div style="display: flex; gap: 1.5rem; align-items: start;">
+                        <div style="flex-shrink: 0; width: 80px; height: 80px; background: linear-gradient(135deg, var(--tc-color-coral-600), var(--tc-color-coral-800)); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;">
+                            <svg class="icon" style="color: white; width: 40px; height: 40px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <div style="flex: 1;">
+                            <h2 style="margin-bottom: 0.5rem;">VirtualCare</h2>
+                            <p style="color: var(--color-text-on-surface-secondary); margin-bottom: 1rem;">Access board-certified physicians 24/7 for non-emergency medical conditions via phone or video. Your account is pre-registered.</p>
+                            <div style="background: var(--tc-color-coral-50); padding: var(--spacing-4); border-radius: var(--radius-md); margin-bottom: 1rem;">
+                                <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: 0.5rem;">How to use:</h4>
+                                <ol style="margin-left: 1.5rem; color: var(--color-text-on-surface-secondary);">
+                                    <li>Claim your account with full name and DOB</li>
+                                    <li>Request a visit via phone or video</li>
+                                    <li>Doctor calls or joins video within minutes</li>
+                                    <li>Receive diagnosis and prescriptions if needed</li>
+                                </ol>
+                            </div>
+                            <div style="background: var(--tc-color-success-50); padding: var(--spacing-3); border-radius: var(--radius-md); border-left: 4px solid var(--tc-color-success-500); margin-bottom: 1rem;">
+                                <p style="font-size: var(--font-size-sm); color: var(--tc-color-success-700);"><strong>Available 24/7</strong> for urgent care, cold/flu, allergies, infections, and more.</p>
+                            </div>
+                            <div style="display: flex; gap: var(--spacing-3); flex-wrap: wrap;">
+                                <button class="button button-primary" onclick="app.showToast('Starting VirtualCare visit')">Get Started</button>
+                                <button class="button button-secondary" onclick="app.showToast('Viewing VirtualCare details')">Plan Details</button>
+                                <button class="button button-tertiary" onclick="app.showToast('Getting help with VirtualCare')">Help</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item" onclick="app.navigateTo('dashboard-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg><span>Home</span></a>
+            <a href="#" class="nav-item" onclick="app.navigateTo('cases-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg><span>Messages</span></a>
+            <a href="#" class="nav-item" onclick="app.navigateTo('documents-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Documents</span></a>
             <a href="#" class="nav-item" onclick="app.navigateTo('wallet-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg><span>Wallet</span></a>
             <a href="#" class="nav-item" onclick="app.navigateTo('settings-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span>Account</span></a>
         </nav>

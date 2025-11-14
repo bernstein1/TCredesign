@@ -216,6 +216,24 @@
                         </svg>
                         <span>Account</span>
                     </a>
+
+                    <div style="padding: var(--spacing-4) var(--spacing-4) var(--spacing-2); margin-top: var(--spacing-4); border-top: 1px solid var(--tc-color-neutral-200);">
+                        <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-on-surface-secondary); margin-bottom: var(--spacing-2);">Services</div>
+                    </div>
+
+                    <a href="#" class="nav-item" onclick="app.navigateTo('get-scheduled-view'); return false;">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        <span>Appointments</span>
+                    </a>
+
+                    <a href="#" class="nav-item" onclick="app.navigateTo('additional-services-view'); return false;">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                        </svg>
+                        <span>Services</span>
+                    </a>
                 </nav>
             </aside>
 
@@ -260,26 +278,26 @@
                                 </svg>
                                 <span>Add emergency contact</span>
                             </div>
-                            <div class="task" onclick="app.navigateTo('settings-view')">
+                            <div class="task" onclick="if(confirm('Navigate to account settings to add dependent information?')) app.navigateTo('settings-view')" style="cursor: pointer;" title="Add your family members to extend coverage and ensure they can access benefits too.">
                                 <svg class="icon text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <circle cx="12" cy="12" r="10" stroke-width="2"/>
                                 </svg>
                                 <span>Add dependent information</span>
-                                <button class="button button-sm button-tertiary">Add</button>
+                                <button class="button button-sm button-tertiary" onclick="event.stopPropagation(); if(confirm('Navigate to account settings to add dependent information?')) app.navigateTo('settings-view')">Add</button>
                             </div>
-                            <div class="task" onclick="app.navigateTo('documents-view')">
+                            <div class="task" onclick="if(confirm('Navigate to documents to upload your insurance card?')) app.navigateTo('documents-view')" style="cursor: pointer;" title="Upload your insurance card for easy access during doctor visits and when filing claims.">
                                 <svg class="icon text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <circle cx="12" cy="12" r="10" stroke-width="2"/>
                                 </svg>
                                 <span>Upload insurance card</span>
-                                <button class="button button-sm button-tertiary">Upload</button>
+                                <button class="button button-sm button-tertiary" onclick="event.stopPropagation(); if(confirm('Navigate to documents to upload your insurance card?')) app.navigateTo('documents-view')">Upload</button>
                             </div>
-                            <div class="task">
+                            <div class="task" onclick="app.navigateTo('get-scheduled-view')" style="cursor: pointer;" title="Schedule a Benefits Refresher consultation to understand and maximize your plan's value.">
                                 <svg class="icon text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <circle cx="12" cy="12" r="10" stroke-width="2"/>
                                 </svg>
                                 <span>Review your benefits</span>
-                                <button class="button button-sm button-tertiary">Review</button>
+                                <button class="button button-sm button-tertiary" onclick="event.stopPropagation(); app.navigateTo('get-scheduled-view')">Review</button>
                             </div>
                         </div>
                     </div>
@@ -960,18 +978,39 @@
                         </svg>
                         <span>Account</span>
                     </a>
+
+                    <div style="padding: var(--spacing-4) var(--spacing-4) var(--spacing-2); margin-top: var(--spacing-4); border-top: 1px solid var(--tc-color-neutral-200);">
+                        <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-on-surface-secondary); margin-bottom: var(--spacing-2);">Services</div>
+                    </div>
+
+                    <a href="#" class="nav-item" onclick="app.navigateTo('get-scheduled-view'); return false;">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        <span>Appointments</span>
+                    </a>
+
+                    <a href="#" class="nav-item" onclick="app.navigateTo('additional-services-view'); return false;">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                        </svg>
+                        <span>Services</span>
+                    </a>
                 </nav>
             </aside>
 
             <main class="main-content">
                 <div class="card" style="margin-bottom: 1.5rem;">
                     <div class="tabs">
-                        <button class="tab active">Insurance Cards</button>
-                        <button class="tab">Payment Methods</button>
-                        <button class="tab">FSA/HSA</button>
+                        <button class="tab active" onclick="app.switchWalletTab('cards')">Insurance Cards</button>
+                        <button class="tab" onclick="app.switchWalletTab('medical-id')">Medical ID</button>
+                        <button class="tab" onclick="app.switchWalletTab('payment')">Payment Methods</button>
+                        <button class="tab" onclick="app.switchWalletTab('fsa')">FSA/HSA</button>
                     </div>
                 </div>
 
+                <!-- Insurance Cards Tab -->
+                <div id="wallet-cards-tab" class="wallet-tab-content">
                 <div class="dashboard-grid">
                     <!-- Medical Insurance Card -->
                     <div class="card" style="grid-column: 1 / -1;">
@@ -1149,6 +1188,331 @@
                         </div>
                     </div>
                 </div>
+                </div>
+                <!-- End Insurance Cards Tab -->
+
+                <!-- Medical ID Tab -->
+                <div id="wallet-medical-id-tab" class="wallet-tab-content" style="display: none;">
+                    <div class="dashboard-grid">
+                        <!-- Quick Summary -->
+                        <div class="card" style="grid-column: 1 / -1; background: linear-gradient(135deg, var(--tc-color-indigo-600), var(--tc-color-indigo-800)); color: white;">
+                            <h3 style="margin-bottom: 1rem;">Medical ID Summary</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--spacing-4);">
+                                <div><div style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold);">3</div><div style="opacity: 0.9;">Providers</div></div>
+                                <div><div style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold);">2</div><div style="opacity: 0.9;">Medications</div></div>
+                                <div><div style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold);">1</div><div style="opacity: 0.9;">Condition</div></div>
+                                <div><div style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold);">A+</div><div style="opacity: 0.9;">Blood Type</div></div>
+                            </div>
+                        </div>
+
+                        <!-- Emergency Contacts -->
+                        <div class="card" style="grid-column: 1 / -1;">
+                            <div class="card-header">
+                                <h3>Emergency Contacts</h3>
+                                <button class="button button-primary button-sm" onclick="app.showEmergencyContactModal()">
+                                    <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                                    </svg>
+                                    Add Contact
+                                </button>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: var(--spacing-3);">
+                                <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: 0.25rem;">John Doe</h4>
+                                        <p style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary); margin-bottom: 0.25rem;">Spouse</p>
+                                        <p style="font-size: var(--font-size-sm); color: var(--tc-color-indigo-600);">(555) 987-6543</p>
+                                    </div>
+                                    <button class="icon-button" onclick="app.showToast('Edit contact')">
+                                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Providers & Practices -->
+                        <div class="card" style="grid-column: 1 / -1;">
+                            <div class="card-header">
+                                <h3>Your Providers & Practices</h3>
+                                <button class="button button-primary button-sm" onclick="app.showProviderModal()">
+                                    <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                                    </svg>
+                                    Add Provider
+                                </button>
+                            </div>
+                            <div style="display: grid; gap: var(--spacing-3);">
+                                <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-radius: var(--radius-md);">
+                                    <div style="display: flex; justify-content: space-between; align-items: start;">
+                                        <div style="flex: 1;">
+                                            <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: 0.25rem;">Dr. Sarah Mitchell</h4>
+                                            <span class="badge badge-sm" style="background: var(--tc-color-teal-100); color: var(--tc-color-teal-700); margin-bottom: 0.5rem;">Primary Care Physician</span>
+                                            <p style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">San Francisco General Hospital</p>
+                                            <p style="font-size: var(--font-size-sm); color: var(--tc-color-indigo-600);">(415) 555-0123</p>
+                                        </div>
+                                        <button class="icon-button" onclick="app.showToast('Edit provider')">
+                                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-radius: var(--radius-md);">
+                                    <div style="display: flex; justify-content: space-between; align-items: start;">
+                                        <div style="flex: 1;">
+                                            <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: 0.25rem;">Dr. James Wong</h4>
+                                            <span class="badge badge-sm" style="background: var(--tc-color-coral-100); color: var(--tc-color-coral-700); margin-bottom: 0.5rem;">Cardiologist</span>
+                                            <p style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">Heart Health Center</p>
+                                            <p style="font-size: var(--font-size-sm); color: var(--tc-color-indigo-600);">(415) 555-0456</p>
+                                        </div>
+                                        <button class="icon-button" onclick="app.showToast('Edit provider')">
+                                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Medical Conditions -->
+                        <div class="card" style="grid-column: 1 / -1;">
+                            <div class="card-header">
+                                <h3>Medical Conditions</h3>
+                                <button class="button button-primary button-sm" onclick="app.showConditionModal()">
+                                    <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                                    </svg>
+                                    Add Condition
+                                </button>
+                            </div>
+                            <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: 0.25rem;">Hypertension</h4>
+                                    <span class="badge badge-warning badge-sm">Moderate</span>
+                                </div>
+                                <button class="icon-button" onclick="app.showToast('Edit condition')">
+                                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Current Medications -->
+                        <div class="card" style="grid-column: 1 / -1;">
+                            <div class="card-header">
+                                <h3>Current Medications</h3>
+                                <button class="button button-primary button-sm" onclick="app.showMedicationModal()">
+                                    <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                                    </svg>
+                                    Add Medication
+                                </button>
+                            </div>
+                            <div style="display: grid; gap: var(--spacing-3);">
+                                <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: 0.25rem;">Lisinopril</h4>
+                                        <p style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">10mg daily • For blood pressure</p>
+                                    </div>
+                                    <button class="icon-button" onclick="app.showToast('Edit medication')">
+                                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: 0.25rem;">Aspirin</h4>
+                                        <p style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">81mg daily • Heart health</p>
+                                    </div>
+                                    <button class="icon-button" onclick="app.showToast('Edit medication')">
+                                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Medical Allergies -->
+                        <div class="card" style="grid-column: 1 / -1;">
+                            <div class="card-header">
+                                <h3>Medical Allergies</h3>
+                                <button class="button button-primary button-sm" onclick="app.showAllergyModal()">
+                                    <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                                    </svg>
+                                    Add Allergy
+                                </button>
+                            </div>
+                            <div style="padding: var(--spacing-4); background: var(--tc-color-error-50); border-radius: var(--radius-md); border: 2px solid var(--tc-color-error-200);">
+                                <p style="color: var(--color-text-on-surface-secondary); text-align: center;">No allergies recorded</p>
+                            </div>
+                        </div>
+
+                        <!-- Additional Notes -->
+                        <div class="card" style="grid-column: 1 / -1;">
+                            <div class="card-header">
+                                <h3>Additional Notes</h3>
+                                <button class="button button-tertiary button-sm" onclick="app.showToast('Edit notes')">Edit</button>
+                            </div>
+                            <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-radius: var(--radius-md);">
+                                <p style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">Previous knee surgery in 2018. Prefer morning appointments.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Medical ID Tab -->
+
+                <!-- Payment Methods Tab -->
+                <div id="wallet-payment-tab" class="wallet-tab-content" style="display: none;">
+                    <div class="dashboard-grid">
+                        <div class="card" style="grid-column: 1 / -1;">
+                            <div class="card-header">
+                                <h3>Payment Methods</h3>
+                                <button class="button button-primary button-sm" onclick="app.showToast('Add payment method')">
+                                    <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                                    </svg>
+                                    Add Card
+                                </button>
+                            </div>
+
+                            <div style="display: flex; flex-direction: column; gap: var(--spacing-4);">
+                                <!-- Credit Card -->
+                                <div style="background: linear-gradient(135deg, var(--tc-color-indigo-700), var(--tc-color-indigo-900)); border-radius: var(--radius-lg); padding: var(--spacing-6); color: white; position: relative;">
+                                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: var(--spacing-6);">
+                                        <div>
+                                            <div style="font-size: var(--font-size-xs); opacity: 0.8; margin-bottom: 0.5rem;">Primary Payment Method</div>
+                                            <div style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); font-family: monospace; letter-spacing: 0.1em;">•••• 4242</div>
+                                        </div>
+                                        <span class="badge badge-success">Active</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <div>
+                                            <div style="font-size: var(--font-size-xs); opacity: 0.8; margin-bottom: 0.25rem;">Card Holder</div>
+                                            <div style="font-weight: var(--font-weight-semibold);">Jane Doe</div>
+                                        </div>
+                                        <div style="text-align: right;">
+                                            <div style="font-size: var(--font-size-xs); opacity: 0.8; margin-bottom: 0.25rem;">Expires</div>
+                                            <div style="font-weight: var(--font-weight-semibold);">12/26</div>
+                                        </div>
+                                    </div>
+                                    <div style="position: absolute; bottom: 1rem; right: 1rem;">
+                                        <svg width="60" height="40" viewBox="0 0 60 40" fill="none">
+                                            <circle cx="20" cy="20" r="15" fill="white" opacity="0.9"/>
+                                            <circle cx="40" cy="20" r="15" fill="white" opacity="0.7"/>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <!-- Manage buttons -->
+                                <div style="display: flex; gap: var(--spacing-3); flex-wrap: wrap;">
+                                    <button class="button button-secondary" onclick="app.showToast('Edit payment method')">Edit Card</button>
+                                    <button class="button button-tertiary" onclick="app.showToast('Remove payment method')">Remove Card</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Auto-pay Settings -->
+                        <div class="card" style="grid-column: 1 / -1;">
+                            <div class="card-header">
+                                <h3>Auto-Pay Settings</h3>
+                            </div>
+                            <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: 0.25rem;">Automatic Payments</h4>
+                                    <p style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">Automatically pay premiums and co-pays</p>
+                                </div>
+                                <label style="position: relative; display: inline-block; width: 50px; height: 24px;">
+                                    <input type="checkbox" style="opacity: 0; width: 0; height: 0;">
+                                    <span style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--tc-color-success-500); border-radius: 24px; transition: 0.4s;"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Payment Methods Tab -->
+
+                <!-- FSA/HSA Tab -->
+                <div id="wallet-fsa-tab" class="wallet-tab-content" style="display: none;">
+                    <div class="dashboard-grid">
+                        <!-- FSA/HSA Balance Card -->
+                        <div class="card" style="grid-column: 1 / -1; background: linear-gradient(135deg, var(--tc-color-teal-600), var(--tc-color-teal-800)); color: white;">
+                            <div style="margin-bottom: var(--spacing-6);">
+                                <h3 style="margin-bottom: 0.5rem;">Health Savings Account</h3>
+                                <p style="opacity: 0.9; font-size: var(--font-size-sm);">Account ending in ••••7890</p>
+                            </div>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--spacing-6);">
+                                <div>
+                                    <div style="opacity: 0.9; font-size: var(--font-size-sm); margin-bottom: 0.5rem;">Current Balance</div>
+                                    <div style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold);">$2,450</div>
+                                </div>
+                                <div>
+                                    <div style="opacity: 0.9; font-size: var(--font-size-sm); margin-bottom: 0.5rem;">2025 Contributions</div>
+                                    <div style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-semibold);">$1,200</div>
+                                </div>
+                                <div>
+                                    <div style="opacity: 0.9; font-size: var(--font-size-sm); margin-bottom: 0.5rem;">Annual Limit</div>
+                                    <div style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-semibold);">$4,150</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Transactions -->
+                        <div class="card" style="grid-column: 1 / -1;">
+                            <div class="card-header">
+                                <h3>Recent Transactions</h3>
+                                <button class="button button-tertiary button-sm" onclick="app.showToast('View all transactions')">View All</button>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: var(--spacing-3);">
+                                <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: 0.25rem;">Pharmacy - CVS</h4>
+                                        <p style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">Jan 10, 2025</p>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <div style="font-weight: var(--font-weight-bold); color: var(--tc-color-error-600);">-$45.00</div>
+                                        <div style="font-size: var(--font-size-xs); color: var(--color-text-on-surface-secondary);">Expense</div>
+                                    </div>
+                                </div>
+                                <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: 0.25rem;">Payroll Contribution</h4>
+                                        <p style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">Jan 1, 2025</p>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <div style="font-weight: var(--font-weight-bold); color: var(--tc-color-success-600);">+$200.00</div>
+                                        <div style="font-size: var(--font-size-xs); color: var(--color-text-on-surface-secondary);">Contribution</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div class="card" style="grid-column: 1 / -1;">
+                            <div class="card-header">
+                                <h3>Quick Actions</h3>
+                            </div>
+                            <div style="display: flex; gap: var(--spacing-3); flex-wrap: wrap;">
+                                <button class="button button-primary" onclick="app.showToast('Submit reimbursement claim')">
+                                    <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                    </svg>
+                                    Submit Claim
+                                </button>
+                                <button class="button button-secondary" onclick="app.showToast('View contribution schedule')">View Contribution Schedule</button>
+                                <button class="button button-secondary" onclick="app.showToast('Download HSA card')">Download HSA Card</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End FSA/HSA Tab -->
+
             </main>
 
             <nav class="bottom-nav">
@@ -1239,6 +1603,24 @@
                         </svg>
                         <span>Account</span>
                     </a>
+
+                    <div style="padding: var(--spacing-4) var(--spacing-4) var(--spacing-2); margin-top: var(--spacing-4); border-top: 1px solid var(--tc-color-neutral-200);">
+                        <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-on-surface-secondary); margin-bottom: var(--spacing-2);">Services</div>
+                    </div>
+
+                    <a href="#" class="nav-item" onclick="app.navigateTo('get-scheduled-view'); return false;">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        <span>Appointments</span>
+                    </a>
+
+                    <a href="#" class="nav-item" onclick="app.navigateTo('additional-services-view'); return false;">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                        </svg>
+                        <span>Services</span>
+                    </a>
                 </nav>
             </aside>
 
@@ -1246,10 +1628,10 @@
                 <div style="max-width: 900px; margin: 0 auto;">
                     <div class="card" style="margin-bottom: 1.5rem;">
                         <div class="tabs">
-                            <button class="tab active">Profile</button>
-                            <button class="tab">Security</button>
-                            <button class="tab">Notifications</button>
-                            <button class="tab">Preferences</button>
+                            <button class="tab active" onclick="app.switchSettingsTab('profile')">Profile</button>
+                            <button class="tab" onclick="app.switchSettingsTab('security')">Security</button>
+                            <button class="tab" onclick="app.switchSettingsTab('notifications')">Notifications</button>
+                            <button class="tab" onclick="app.switchSettingsTab('preferences')">Preferences</button>
                         </div>
                     </div>
 
@@ -1380,6 +1762,63 @@
                         </div>
                     </div>
 
+                    <!-- Security Settings (Hidden by default) -->
+                    <div id="security-tab" class="settings-tab-content" style="display: none;">
+                        <div class="card" style="margin-bottom: 1.5rem;">
+                            <div class="card-header">
+                                <h3>Login & Security</h3>
+                            </div>
+
+                            <div style="display: flex; flex-direction: column; gap: var(--spacing-4);">
+                                <!-- Email -->
+                                <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-1);">Email Address</h4>
+                                        <p style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">jane.doe@example.com</p>
+                                    </div>
+                                    <button class="button button-tertiary button-sm" onclick="app.showToast('Change email feature - verification email sent')">Change</button>
+                                </div>
+
+                                <!-- Password -->
+                                <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-1);">Password</h4>
+                                        <p style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">Last changed 3 months ago</p>
+                                    </div>
+                                    <button class="button button-tertiary button-sm" onclick="app.showToast('Change password feature')">Change</button>
+                                </div>
+
+                                <!-- MFA -->
+                                <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-1);">Two-Factor Authentication</h4>
+                                        <p style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">Add an extra layer of security to your account</p>
+                                    </div>
+                                    <button class="button button-primary button-sm" onclick="app.showToast('MFA setup started - check your email for setup instructions')">Enable MFA</button>
+                                </div>
+
+                                <!-- Trusted Devices -->
+                                <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-radius: var(--radius-md);">
+                                    <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-3);">Trusted Devices</h4>
+                                    <div style="display: flex; flex-direction: column; gap: var(--spacing-3);">
+                                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                                            <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+                                                <svg class="icon" style="color: var(--tc-color-indigo-600);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                                </svg>
+                                                <div>
+                                                    <div style="font-weight: var(--font-weight-medium);">Chrome on MacBook Pro</div>
+                                                    <div style="font-size: var(--font-size-xs); color: var(--color-text-on-surface-secondary);">San Francisco, CA • Last used: Today</div>
+                                                </div>
+                                            </div>
+                                            <span class="badge badge-success badge-sm">Current</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Account Actions -->
                     <div class="card">
                         <div class="card-header">
@@ -1401,6 +1840,13 @@
                                 Export All Documents
                             </button>
 
+                            <button class="button button-secondary button-lg" style="justify-content: flex-start;" onclick="app.showTermsModal()">
+                                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                                Terms and Conditions
+                            </button>
+
                             <div style="border-top: 1px solid var(--tc-color-neutral-200); margin: var(--spacing-4) 0;"></div>
 
                             <button class="button button-secondary button-lg" style="justify-content: flex-start; color: var(--tc-color-error-600);" onclick="app.showToast('Deactivate account feature')">
@@ -1414,7 +1860,7 @@
                                 <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
                                 </svg>
-                                Log Out
+                                Sign Out
                             </button>
                         </div>
                     </div>
@@ -1463,6 +1909,274 @@
     <!-- Loading Overlay -->
     <div id="loading-overlay" class="loading-overlay">
         <div class="spinner"></div>
+    </div>
+
+    <!-- Resolve Case Confirmation Modal -->
+    <div id="resolve-case-modal" class="modal">
+        <div class="modal-overlay" onclick="app.hideResolveCaseDialog()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Mark Case as Resolved?</h3>
+                <button class="icon-button" onclick="app.hideResolveCaseDialog()">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to mark this case as resolved? The case will be moved to your resolved cases list.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="button button-secondary" onclick="app.hideResolveCaseDialog()">Cancel</button>
+                <button class="button button-primary" onclick="app.confirmResolveCase()">
+                    <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    Yes, Mark as Resolved
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms and Conditions Modal -->
+    <div id="terms-modal" class="modal">
+        <div class="modal-overlay" onclick="app.hideTermsModal()"></div>
+        <div class="modal-content" style="max-width: 800px;">
+            <div class="modal-header">
+                <h3>Terms and Conditions</h3>
+                <button class="icon-button" onclick="app.hideTermsModal()">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body" style="max-height: 60vh; overflow-y: auto;">
+                <h4 style="margin-bottom: 1rem;">TouchCare Assist User Agreement</h4>
+                <p style="margin-bottom: 1rem;">
+                    By using the TouchCare service or clicking "I agree", you agree to be bound by this User Agreement.
+                </p>
+
+                <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: var(--font-weight-semibold);">1. Acceptance of Terms</h5>
+                <p style="margin-bottom: 1rem;">
+                    By accessing and using the TouchCare platform, you acknowledge that you have read, understood, and agree to be bound by these terms and conditions. If you do not agree to these terms, please do not use our services.
+                </p>
+
+                <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: var(--font-weight-semibold);">2. Privacy and Data Protection</h5>
+                <p style="margin-bottom: 1rem;">
+                    TouchCare is committed to protecting your privacy and personal health information. We comply with HIPAA regulations and all applicable data protection laws. Your health information will only be used to provide services and will not be shared without your explicit consent.
+                </p>
+
+                <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: var(--font-weight-semibold);">3. Service Description</h5>
+                <p style="margin-bottom: 1rem;">
+                    TouchCare provides benefits navigation, care coordination, and health assistance services. Our platform offers access to health assistants, document management, appointment scheduling, and additional clinical services.
+                </p>
+
+                <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: var(--font-weight-semibold);">4. User Responsibilities</h5>
+                <p style="margin-bottom: 1rem;">
+                    You agree to provide accurate and complete information, maintain the confidentiality of your account credentials, and notify us immediately of any unauthorized access. You are responsible for all activities under your account.
+                </p>
+
+                <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: var(--font-weight-semibold);">5. Medical Disclaimer</h5>
+                <p style="margin-bottom: 1rem;">
+                    TouchCare provides information and navigation services but does not provide medical advice, diagnosis, or treatment. Always seek the advice of qualified healthcare providers with questions regarding medical conditions. In case of emergency, call 911 immediately.
+                </p>
+
+                <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: var(--font-weight-semibold);">6. Limitation of Liability</h5>
+                <p style="margin-bottom: 1rem;">
+                    TouchCare shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of our services. Our total liability shall not exceed the fees paid for services in the past 12 months.
+                </p>
+
+                <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: var(--font-weight-semibold);">7. Changes to Terms</h5>
+                <p style="margin-bottom: 1rem;">
+                    We reserve the right to modify these terms at any time. Continued use of our services after changes constitutes acceptance of the modified terms. We will notify you of significant changes via email or platform notification.
+                </p>
+
+                <p style="margin-top: 2rem; font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">
+                    Last updated: January 2025
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button class="button button-primary" onclick="app.hideTermsModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Provider Modal -->
+    <div id="provider-modal" class="modal">
+        <div class="modal-overlay" onclick="app.hideProviderModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="provider-modal-title">Add Provider</h3>
+                <button class="icon-button" onclick="app.hideProviderModal()">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-wrapper" style="margin-bottom: var(--spacing-4);">
+                    <label for="provider-name" class="input-label">Provider Name *</label>
+                    <input type="text" id="provider-name" class="input" placeholder="Dr. John Smith" required>
+                </div>
+                <div class="input-wrapper" style="margin-bottom: var(--spacing-4);">
+                    <label for="provider-specialty" class="input-label">Specialty *</label>
+                    <input type="text" id="provider-specialty" class="input" placeholder="Cardiology" required>
+                </div>
+                <div class="input-wrapper" style="margin-bottom: var(--spacing-4);">
+                    <label for="provider-practice" class="input-label">Practice/Hospital</label>
+                    <input type="text" id="provider-practice" class="input" placeholder="City General Hospital">
+                </div>
+                <div class="input-wrapper">
+                    <label for="provider-phone" class="input-label">Phone Number</label>
+                    <input type="tel" id="provider-phone" class="input" placeholder="(555) 123-4567">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="button button-secondary" onclick="app.hideProviderModal()">Cancel</button>
+                <button class="button button-primary" onclick="app.saveProvider()">Save Provider</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Emergency Contact Modal -->
+    <div id="emergency-contact-modal" class="modal">
+        <div class="modal-overlay" onclick="app.hideEmergencyContactModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="emergency-contact-modal-title">Add Emergency Contact</h3>
+                <button class="icon-button" onclick="app.hideEmergencyContactModal()">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-wrapper" style="margin-bottom: var(--spacing-4);">
+                    <label for="emergency-contact-name" class="input-label">Name *</label>
+                    <input type="text" id="emergency-contact-name" class="input" placeholder="John Doe" required>
+                </div>
+                <div class="input-wrapper" style="margin-bottom: var(--spacing-4);">
+                    <label for="emergency-contact-relationship" class="input-label">Relationship *</label>
+                    <input type="text" id="emergency-contact-relationship" class="input" placeholder="Spouse" required>
+                </div>
+                <div class="input-wrapper">
+                    <label for="emergency-contact-phone" class="input-label">Phone Number *</label>
+                    <input type="tel" id="emergency-contact-phone" class="input" placeholder="(555) 123-4567" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="button button-secondary" onclick="app.hideEmergencyContactModal()">Cancel</button>
+                <button class="button button-primary" onclick="app.saveEmergencyContact()">Save Contact</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Medical Condition Modal -->
+    <div id="condition-modal" class="modal">
+        <div class="modal-overlay" onclick="app.hideConditionModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="condition-modal-title">Add Medical Condition</h3>
+                <button class="icon-button" onclick="app.hideConditionModal()">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-wrapper" style="margin-bottom: var(--spacing-4);">
+                    <label for="condition-name" class="input-label">Condition Name *</label>
+                    <input type="text" id="condition-name" class="input" placeholder="Hypertension" required>
+                </div>
+                <div class="input-wrapper">
+                    <label for="condition-severity" class="input-label">Severity</label>
+                    <select id="condition-severity" class="input">
+                        <option value="mild">Mild</option>
+                        <option value="moderate" selected>Moderate</option>
+                        <option value="severe">Severe</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="button button-secondary" onclick="app.hideConditionModal()">Cancel</button>
+                <button class="button button-primary" onclick="app.saveCondition()">Save Condition</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Medication Modal -->
+    <div id="medication-modal" class="modal">
+        <div class="modal-overlay" onclick="app.hideMedicationModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="medication-modal-title">Add Medication</h3>
+                <button class="icon-button" onclick="app.hideMedicationModal()">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-wrapper" style="margin-bottom: var(--spacing-4);">
+                    <label for="medication-name" class="input-label">Medication Name *</label>
+                    <input type="text" id="medication-name" class="input" placeholder="Lisinopril" required>
+                </div>
+                <div class="input-wrapper" style="margin-bottom: var(--spacing-4);">
+                    <label for="medication-dosage" class="input-label">Dosage *</label>
+                    <input type="text" id="medication-dosage" class="input" placeholder="10mg" required>
+                </div>
+                <div class="input-wrapper" style="margin-bottom: var(--spacing-4);">
+                    <label for="medication-frequency" class="input-label">Frequency *</label>
+                    <input type="text" id="medication-frequency" class="input" placeholder="Once daily" required>
+                </div>
+                <div class="input-wrapper">
+                    <label for="medication-purpose" class="input-label">Purpose</label>
+                    <input type="text" id="medication-purpose" class="input" placeholder="Blood pressure management">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="button button-secondary" onclick="app.hideMedicationModal()">Cancel</button>
+                <button class="button button-primary" onclick="app.saveMedication()">Save Medication</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Allergy Modal -->
+    <div id="allergy-modal" class="modal">
+        <div class="modal-overlay" onclick="app.hideAllergyModal()">
+</div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="allergy-modal-title">Add Allergy</h3>
+                <button class="icon-button" onclick="app.hideAllergyModal()">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-wrapper" style="margin-bottom: var(--spacing-4);">
+                    <label for="allergy-name" class="input-label">Allergen *</label>
+                    <input type="text" id="allergy-name" class="input" placeholder="Penicillin" required>
+                </div>
+                <div class="input-wrapper" style="margin-bottom: var(--spacing-4);">
+                    <label for="allergy-severity" class="input-label">Severity</label>
+                    <select id="allergy-severity" class="input">
+                        <option value="mild">Mild</option>
+                        <option value="moderate" selected>Moderate</option>
+                        <option value="severe">Severe</option>
+                    </select>
+                </div>
+                <div class="input-wrapper">
+                    <label for="allergy-reaction" class="input-label">Reaction</label>
+                    <input type="text" id="allergy-reaction" class="input" placeholder="Rash, hives">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="button button-secondary" onclick="app.hideAllergyModal()">Cancel</button>
+                <button class="button button-primary" onclick="app.saveAllergy()">Save Allergy</button>
+            </div>
+        </div>
     </div>
 
     <script src="app.js"></script>
