@@ -174,21 +174,6 @@ const app = {
         }, 1000);
     },
 
-    // Terms and Conditions modal
-    showTermsModal() {
-        const modal = document.getElementById('terms-modal');
-        if (modal) {
-            modal.classList.add('active');
-        }
-    },
-
-    hideTermsModal() {
-        const modal = document.getElementById('terms-modal');
-        if (modal) {
-            modal.classList.remove('active');
-        }
-    },
-
     // Wallet tab switching
     switchWalletTab(tabName) {
         // Hide all wallet tabs
