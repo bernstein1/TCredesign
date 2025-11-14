@@ -551,10 +551,10 @@
                             </button>
                         </div>
 
-                        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--tc-color-neutral-200); padding-bottom: 1rem;">
-                            <button class="link" style="padding-bottom: 0.5rem; border-bottom: 3px solid var(--color-interactive-primary); margin-bottom: -1rem;">All</button>
-                            <button class="link" style="color: var(--color-text-on-surface-secondary);">Open</button>
-                            <button class="link" style="color: var(--color-text-on-surface-secondary);">Resolved</button>
+                        <div class="tabs">
+                            <button class="tab active">All</button>
+                            <button class="tab">Open</button>
+                            <button class="tab">Resolved</button>
                         </div>
 
                         <div class="cases-list">
@@ -806,11 +806,11 @@
 
             <main class="main-content">
                 <div class="card" style="margin-bottom: 1.5rem;">
-                    <div style="display: flex; gap: 1rem; border-bottom: 2px solid var(--tc-color-neutral-200); padding-bottom: 1rem;">
-                        <button class="link" style="padding-bottom: 0.5rem; border-bottom: 3px solid var(--color-interactive-primary); margin-bottom: -1rem;">All Documents</button>
-                        <button class="link" style="color: var(--color-text-on-surface-secondary);">Insurance Cards</button>
-                        <button class="link" style="color: var(--color-text-on-surface-secondary);">Claims & EOBs</button>
-                        <button class="link" style="color: var(--color-text-on-surface-secondary);">Policies</button>
+                    <div class="tabs">
+                        <button class="tab active">All Documents</button>
+                        <button class="tab">Insurance Cards</button>
+                        <button class="tab">Claims & EOBs</button>
+                        <button class="tab">Policies</button>
                     </div>
                 </div>
 
@@ -899,6 +899,560 @@
                 <a href="#" class="nav-item active" onclick="app.navigateTo('documents-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span>Documents</span></a>
                 <a href="#" class="nav-item" onclick="app.navigateTo('wallet-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg><span>Wallet</span></a>
                 <a href="#" class="nav-item" onclick="app.navigateTo('settings-view'); return false;"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span>Account</span></a>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Wallet View -->
+    <section id="wallet-view" class="view">
+        <div class="app-layout">
+            <header class="top-bar">
+                <div class="logo-small">TC</div>
+                <h1 class="page-title">Wallet</h1>
+                <div class="top-bar-actions">
+                    <button class="icon-button" onclick="app.showToast('Download card feature')">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                        </svg>
+                    </button>
+                    <button class="avatar" onclick="app.navigateTo('settings-view')">
+                        <span>JD</span>
+                    </button>
+                </div>
+            </header>
+
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <div class="logo">
+                        <div class="logo-icon">TC</div>
+                        <h1>TouchCare</h1>
+                    </div>
+                </div>
+                <nav class="sidebar-nav">
+                    <a href="#" class="nav-item" onclick="app.navigateTo('dashboard-view'); return false;">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        </svg>
+                        <span>Home</span>
+                    </a>
+                    <a href="#" class="nav-item" onclick="app.navigateTo('cases-view'); return false;">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                        </svg>
+                        <span>Messages</span>
+                    </a>
+                    <a href="#" class="nav-item" onclick="app.navigateTo('documents-view'); return false;">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                        <span>Documents</span>
+                    </a>
+                    <a href="#" class="nav-item active" onclick="app.navigateTo('wallet-view'); return false;">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                        </svg>
+                        <span>Wallet</span>
+                    </a>
+                    <a href="#" class="nav-item" onclick="app.navigateTo('settings-view'); return false;">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        <span>Account</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <main class="main-content">
+                <div class="card" style="margin-bottom: 1.5rem;">
+                    <div class="tabs">
+                        <button class="tab active">Insurance Cards</button>
+                        <button class="tab">Payment Methods</button>
+                        <button class="tab">FSA/HSA</button>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <!-- Medical Insurance Card -->
+                    <div class="card" style="grid-column: 1 / -1;">
+                        <div class="card-header">
+                            <h3>Medical Insurance Card</h3>
+                            <button class="button button-tertiary button-sm" onclick="app.showToast('Card downloaded')">
+                                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                </svg>
+                                Download
+                            </button>
+                        </div>
+
+                        <!-- Insurance Card Front -->
+                        <div style="background: linear-gradient(135deg, var(--tc-color-indigo-700), var(--tc-color-indigo-900)); border-radius: var(--radius-lg); padding: var(--spacing-8); color: white; margin-bottom: var(--spacing-4); box-shadow: var(--shadow-lg);">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: var(--spacing-8);">
+                                <div>
+                                    <div style="font-size: var(--font-size-xs); opacity: 0.9; margin-bottom: var(--spacing-1);">Member Name</div>
+                                    <div style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold);">Jane Doe</div>
+                                </div>
+                                <div style="background: white; padding: var(--spacing-2) var(--spacing-3); border-radius: var(--radius-md);">
+                                    <div style="color: var(--tc-color-indigo-800); font-weight: var(--font-weight-bold); font-size: var(--font-size-lg);">TouchCare</div>
+                                </div>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-6);">
+                                <div>
+                                    <div style="font-size: var(--font-size-xs); opacity: 0.9; margin-bottom: var(--spacing-1);">Member ID</div>
+                                    <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); font-family: monospace;">TC123456789</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: var(--font-size-xs); opacity: 0.9; margin-bottom: var(--spacing-1);">Group Number</div>
+                                    <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); font-family: monospace;">GRP-2025-001</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: var(--font-size-xs); opacity: 0.9; margin-bottom: var(--spacing-1);">Plan</div>
+                                    <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold);">PPO Plus</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: var(--font-size-xs); opacity: 0.9; margin-bottom: var(--spacing-1);">Effective Date</div>
+                                    <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold);">01/01/2025</div>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: var(--spacing-6); padding-top: var(--spacing-6); border-top: 1px solid rgba(255, 255, 255, 0.2);">
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--spacing-4); font-size: var(--font-size-sm);">
+                                    <div>
+                                        <div style="opacity: 0.9;">Copay (PCP)</div>
+                                        <div style="font-weight: var(--font-weight-semibold);">$20</div>
+                                    </div>
+                                    <div>
+                                        <div style="opacity: 0.9;">Copay (Specialist)</div>
+                                        <div style="font-weight: var(--font-weight-semibold);">$40</div>
+                                    </div>
+                                    <div>
+                                        <div style="opacity: 0.9;">Deductible</div>
+                                        <div style="font-weight: var(--font-weight-semibold);">$1,500</div>
+                                    </div>
+                                    <div>
+                                        <div style="opacity: 0.9;">Out-of-Pocket Max</div>
+                                        <div style="font-weight: var(--font-weight-semibold);">$6,000</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div style="display: flex; gap: var(--spacing-3); flex-wrap: wrap;">
+                            <button class="button button-secondary button-sm" onclick="app.showToast('Added to Apple Wallet')">
+                                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                                </svg>
+                                Add to Apple Wallet
+                            </button>
+                            <button class="button button-secondary button-sm" onclick="app.showToast('Card shared')">
+                                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                                </svg>
+                                Share Card
+                            </button>
+                            <button class="button button-secondary button-sm" onclick="app.showToast('Card printed')">
+                                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+                                </svg>
+                                Print Card
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Dental Insurance Card -->
+                    <div class="card" style="grid-column: 1 / -1;">
+                        <div class="card-header">
+                            <h3>Dental Insurance Card</h3>
+                            <button class="button button-tertiary button-sm" onclick="app.showToast('Card downloaded')">
+                                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                </svg>
+                                Download
+                            </button>
+                        </div>
+
+                        <div style="background: linear-gradient(135deg, var(--tc-color-teal-600), var(--tc-color-teal-800)); border-radius: var(--radius-lg); padding: var(--spacing-8); color: white; margin-bottom: var(--spacing-4); box-shadow: var(--shadow-lg);">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: var(--spacing-8);">
+                                <div>
+                                    <div style="font-size: var(--font-size-xs); opacity: 0.9; margin-bottom: var(--spacing-1);">Member Name</div>
+                                    <div style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold);">Jane Doe</div>
+                                </div>
+                                <div style="background: white; padding: var(--spacing-2) var(--spacing-3); border-radius: var(--radius-md);">
+                                    <div style="color: var(--tc-color-teal-700); font-weight: var(--font-weight-bold); font-size: var(--font-size-lg);">TouchCare</div>
+                                </div>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-6);">
+                                <div>
+                                    <div style="font-size: var(--font-size-xs); opacity: 0.9; margin-bottom: var(--spacing-1);">Member ID</div>
+                                    <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); font-family: monospace;">TC123456789-D</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: var(--font-size-xs); opacity: 0.9; margin-bottom: var(--spacing-1);">Group Number</div>
+                                    <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); font-family: monospace;">GRP-2025-001</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: var(--font-size-xs); opacity: 0.9; margin-bottom: var(--spacing-1);">Plan</div>
+                                    <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold);">Dental Premium</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: var(--font-size-xs); opacity: 0.9; margin-bottom: var(--spacing-1);">Annual Maximum</div>
+                                    <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold);">$1,500</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vision Insurance Card -->
+                    <div class="card" style="grid-column: 1 / -1;">
+                        <div class="card-header">
+                            <h3>Vision Insurance Card</h3>
+                            <button class="button button-tertiary button-sm" onclick="app.showToast('Card downloaded')">
+                                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                </svg>
+                                Download
+                            </button>
+                        </div>
+
+                        <div style="background: linear-gradient(135deg, var(--tc-color-coral-500), var(--tc-color-coral-700)); border-radius: var(--radius-lg); padding: var(--spacing-8); color: white; box-shadow: var(--shadow-lg);">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: var(--spacing-8);">
+                                <div>
+                                    <div style="font-size: var(--font-size-xs); opacity: 0.9; margin-bottom: var(--spacing-1);">Member Name</div>
+                                    <div style="font-size: var(--font-size-xl); font-weight: var(--font-weight-bold);">Jane Doe</div>
+                                </div>
+                                <div style="background: white; padding: var(--spacing-2) var(--spacing-3); border-radius: var(--radius-md);">
+                                    <div style="color: var(--tc-color-coral-600); font-weight: var(--font-weight-bold); font-size: var(--font-size-lg);">TouchCare</div>
+                                </div>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-6);">
+                                <div>
+                                    <div style="font-size: var(--font-size-xs); opacity: 0.9; margin-bottom: var(--spacing-1);">Member ID</div>
+                                    <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); font-family: monospace;">TC123456789-V</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: var(--font-size-xs); opacity: 0.9; margin-bottom: var(--spacing-1);">Group Number</div>
+                                    <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); font-family: monospace;">GRP-2025-001</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: var(--font-size-xs); opacity: 0.9; margin-bottom: var(--spacing-1);">Plan</div>
+                                    <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold);">Vision Standard</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: var(--font-size-xs); opacity: 0.9; margin-bottom: var(--spacing-1);">Copay (Exam)</div>
+                                    <div style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold);">$10</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <nav class="bottom-nav">
+                <a href="#" class="nav-item" onclick="app.navigateTo('dashboard-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                    </svg>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('cases-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                    </svg>
+                    <span>Messages</span>
+                </a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('documents-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    <span>Documents</span>
+                </a>
+                <a href="#" class="nav-item active" onclick="app.navigateTo('wallet-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                    </svg>
+                    <span>Wallet</span>
+                </a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('settings-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                    <span>Account</span>
+                </a>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Settings View (Account) -->
+    <section id="settings-view" class="view">
+        <div class="app-layout">
+            <header class="top-bar">
+                <div class="logo-small">TC</div>
+                <h1 class="page-title">Account Settings</h1>
+                <div class="top-bar-actions">
+                    <button class="avatar" onclick="app.navigateTo('settings-view')">
+                        <span>JD</span>
+                    </button>
+                </div>
+            </header>
+
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <div class="logo">
+                        <div class="logo-icon">TC</div>
+                        <h1>TouchCare</h1>
+                    </div>
+                </div>
+                <nav class="sidebar-nav">
+                    <a href="#" class="nav-item" onclick="app.navigateTo('dashboard-view'); return false;">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        </svg>
+                        <span>Home</span>
+                    </a>
+                    <a href="#" class="nav-item" onclick="app.navigateTo('cases-view'); return false;">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                        </svg>
+                        <span>Messages</span>
+                    </a>
+                    <a href="#" class="nav-item" onclick="app.navigateTo('documents-view'); return false;">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                        <span>Documents</span>
+                    </a>
+                    <a href="#" class="nav-item" onclick="app.navigateTo('wallet-view'); return false;">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                        </svg>
+                        <span>Wallet</span>
+                    </a>
+                    <a href="#" class="nav-item active" onclick="app.navigateTo('settings-view'); return false;">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        <span>Account</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <main class="main-content">
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div class="card" style="margin-bottom: 1.5rem;">
+                        <div class="tabs">
+                            <button class="tab active">Profile</button>
+                            <button class="tab">Security</button>
+                            <button class="tab">Notifications</button>
+                            <button class="tab">Preferences</button>
+                        </div>
+                    </div>
+
+                    <!-- Profile Information -->
+                    <div class="card" style="margin-bottom: 1.5rem;">
+                        <div class="card-header">
+                            <h3>Personal Information</h3>
+                            <button class="button button-primary button-sm" onclick="app.showToast('Profile updated')">Save Changes</button>
+                        </div>
+
+                        <div style="display: flex; align-items: center; gap: var(--spacing-6); margin-bottom: var(--spacing-6); padding-bottom: var(--spacing-6); border-bottom: 1px solid var(--tc-color-neutral-200);">
+                            <div class="avatar" style="width: 80px; height: 80px; font-size: var(--font-size-2xl);">JD</div>
+                            <div style="flex: 1;">
+                                <h4 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-1);">Jane Doe</h4>
+                                <p style="color: var(--color-text-on-surface-secondary); margin-bottom: var(--spacing-3);">jane.doe@example.com</p>
+                                <button class="button button-secondary button-sm" onclick="app.showToast('Upload photo feature')">Change Photo</button>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; gap: var(--spacing-6);">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-4);">
+                                <div class="input-wrapper">
+                                    <label for="first-name" class="input-label">First Name</label>
+                                    <input type="text" id="first-name" class="input" value="Jane">
+                                </div>
+                                <div class="input-wrapper">
+                                    <label for="last-name" class="input-label">Last Name</label>
+                                    <input type="text" id="last-name" class="input" value="Doe">
+                                </div>
+                            </div>
+
+                            <div class="input-wrapper">
+                                <label for="email" class="input-label">Email Address</label>
+                                <input type="email" id="email" class="input" value="jane.doe@example.com">
+                            </div>
+
+                            <div class="input-wrapper">
+                                <label for="phone" class="input-label">Phone Number</label>
+                                <input type="tel" id="phone" class="input" value="(555) 123-4567">
+                            </div>
+
+                            <div class="input-wrapper">
+                                <label for="dob" class="input-label">Date of Birth</label>
+                                <input type="date" id="dob" class="input" value="1990-01-15">
+                            </div>
+
+                            <div class="input-wrapper">
+                                <label for="address" class="input-label">Address</label>
+                                <input type="text" id="address" class="input" value="123 Main Street, Apartment 4B">
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--spacing-4);">
+                                <div class="input-wrapper">
+                                    <label for="city" class="input-label">City</label>
+                                    <input type="text" id="city" class="input" value="San Francisco">
+                                </div>
+                                <div class="input-wrapper">
+                                    <label for="state" class="input-label">State</label>
+                                    <input type="text" id="state" class="input" value="CA">
+                                </div>
+                                <div class="input-wrapper">
+                                    <label for="zip" class="input-label">ZIP Code</label>
+                                    <input type="text" id="zip" class="input" value="94102">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Contact -->
+                    <div class="card" style="margin-bottom: 1.5rem;">
+                        <div class="card-header">
+                            <h3>Emergency Contact</h3>
+                        </div>
+
+                        <div style="display: grid; gap: var(--spacing-4);">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-4);">
+                                <div class="input-wrapper">
+                                    <label for="emergency-name" class="input-label">Full Name</label>
+                                    <input type="text" id="emergency-name" class="input" value="John Doe">
+                                </div>
+                                <div class="input-wrapper">
+                                    <label for="emergency-relationship" class="input-label">Relationship</label>
+                                    <input type="text" id="emergency-relationship" class="input" value="Spouse">
+                                </div>
+                            </div>
+
+                            <div class="input-wrapper">
+                                <label for="emergency-phone" class="input-label">Phone Number</label>
+                                <input type="tel" id="emergency-phone" class="input" value="(555) 987-6543">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dependents -->
+                    <div class="card" style="margin-bottom: 1.5rem;">
+                        <div class="card-header">
+                            <h3>Dependents</h3>
+                            <button class="button button-secondary button-sm" onclick="app.showToast('Add dependent feature')">
+                                <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                                </svg>
+                                Add Dependent
+                            </button>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: var(--spacing-4);">
+                            <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-1);">Emily Doe</h4>
+                                    <p style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">Daughter • DOB: 05/10/2015 • Age: 9</p>
+                                </div>
+                                <div style="display: flex; gap: var(--spacing-2);">
+                                    <button class="button button-tertiary button-sm" onclick="app.showToast('Edit dependent feature')">Edit</button>
+                                    <button class="button button-tertiary button-sm" onclick="app.showToast('Remove dependent feature')">Remove</button>
+                                </div>
+                            </div>
+
+                            <div style="padding: var(--spacing-4); background: var(--tc-color-neutral-50); border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <h4 style="font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-1);">Michael Doe</h4>
+                                    <p style="font-size: var(--font-size-sm); color: var(--color-text-on-surface-secondary);">Son • DOB: 03/22/2018 • Age: 6</p>
+                                </div>
+                                <div style="display: flex; gap: var(--spacing-2);">
+                                    <button class="button button-tertiary button-sm" onclick="app.showToast('Edit dependent feature')">Edit</button>
+                                    <button class="button button-tertiary button-sm" onclick="app.showToast('Remove dependent feature')">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Account Actions -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Account Actions</h3>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: var(--spacing-3);">
+                            <button class="button button-secondary button-lg" style="justify-content: flex-start;" onclick="app.showToast('Download data feature')">
+                                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                </svg>
+                                Download My Data
+                            </button>
+
+                            <button class="button button-secondary button-lg" style="justify-content: flex-start;" onclick="app.showToast('Export documents feature')">
+                                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                                Export All Documents
+                            </button>
+
+                            <div style="border-top: 1px solid var(--tc-color-neutral-200); margin: var(--spacing-4) 0;"></div>
+
+                            <button class="button button-secondary button-lg" style="justify-content: flex-start; color: var(--tc-color-error-600);" onclick="app.showToast('Deactivate account feature')">
+                                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                                </svg>
+                                Deactivate Account
+                            </button>
+
+                            <button class="button button-tertiary button-lg" style="justify-content: flex-start;" onclick="app.navigateTo('login-view')">
+                                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                                </svg>
+                                Log Out
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <nav class="bottom-nav">
+                <a href="#" class="nav-item" onclick="app.navigateTo('dashboard-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                    </svg>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('cases-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                    </svg>
+                    <span>Messages</span>
+                </a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('documents-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    <span>Documents</span>
+                </a>
+                <a href="#" class="nav-item" onclick="app.navigateTo('wallet-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                    </svg>
+                    <span>Wallet</span>
+                </a>
+                <a href="#" class="nav-item active" onclick="app.navigateTo('settings-view'); return false;">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                    <span>Account</span>
+                </a>
             </nav>
         </div>
     </section>
