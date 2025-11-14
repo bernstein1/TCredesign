@@ -1924,3 +1924,57 @@ html {
         min-width: 44px;
     }
 }
+
+/* === Tab Components === */
+.tabs {
+    display: flex;
+    gap: var(--spacing-4);
+    border-bottom: 2px solid var(--tc-color-neutral-200);
+    margin-bottom: var(--spacing-6);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.tab {
+    padding: var(--spacing-3) var(--spacing-4);
+    background: transparent;
+    border: none;
+    color: var(--color-text-on-surface-secondary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    font-family: var(--font-family-body);
+    cursor: pointer;
+    white-space: nowrap;
+    position: relative;
+    transition: all var(--duration-fast) var(--ease-out);
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+}
+
+.tab:hover {
+    color: var(--color-text-on-surface);
+    background-color: var(--tc-color-neutral-50);
+}
+
+.tab.active {
+    color: var(--color-interactive-primary);
+    border-bottom-color: var(--color-interactive-primary);
+    font-weight: var(--font-weight-semibold);
+}
+
+.tab:focus-visible {
+    outline: 2px solid var(--color-interactive-primary);
+    outline-offset: -2px;
+}
+
+/* Responsive tab adjustments */
+@media (max-width: 640px) {
+    .tabs {
+        gap: var(--spacing-2);
+    }
+
+    .tab {
+        padding: var(--spacing-2) var(--spacing-3);
+        font-size: var(--font-size-sm);
+    }
+}
