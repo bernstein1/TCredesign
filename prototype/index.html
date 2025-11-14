@@ -216,6 +216,24 @@
                         </svg>
                         <span>Account</span>
                     </a>
+
+                    <div style="padding: var(--spacing-4) var(--spacing-4) var(--spacing-2); margin-top: var(--spacing-4); border-top: 1px solid var(--tc-color-neutral-200);">
+                        <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-on-surface-secondary); margin-bottom: var(--spacing-2);">Services</div>
+                    </div>
+
+                    <a href="#" class="nav-item" onclick="app.navigateTo('get-scheduled-view'); return false;">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        <span>Appointments</span>
+                    </a>
+
+                    <a href="#" class="nav-item" onclick="app.navigateTo('additional-services-view'); return false;">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                        </svg>
+                        <span>Services</span>
+                    </a>
                 </nav>
             </aside>
 
@@ -960,6 +978,24 @@
                         </svg>
                         <span>Account</span>
                     </a>
+
+                    <div style="padding: var(--spacing-4) var(--spacing-4) var(--spacing-2); margin-top: var(--spacing-4); border-top: 1px solid var(--tc-color-neutral-200);">
+                        <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-on-surface-secondary); margin-bottom: var(--spacing-2);">Services</div>
+                    </div>
+
+                    <a href="#" class="nav-item" onclick="app.navigateTo('get-scheduled-view'); return false;">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        <span>Appointments</span>
+                    </a>
+
+                    <a href="#" class="nav-item" onclick="app.navigateTo('additional-services-view'); return false;">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                        </svg>
+                        <span>Services</span>
+                    </a>
                 </nav>
             </aside>
 
@@ -1173,7 +1209,7 @@
                         <div class="card" style="grid-column: 1 / -1;">
                             <div class="card-header">
                                 <h3>Emergency Contacts</h3>
-                                <button class="button button-primary button-sm" onclick="app.showToast('Add emergency contact')">
+                                <button class="button button-primary button-sm" onclick="app.showEmergencyContactModal()">
                                     <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
                                     </svg>
@@ -1200,7 +1236,7 @@
                         <div class="card" style="grid-column: 1 / -1;">
                             <div class="card-header">
                                 <h3>Your Providers & Practices</h3>
-                                <button class="button button-primary button-sm" onclick="app.showToast('Add provider')">
+                                <button class="button button-primary button-sm" onclick="app.showProviderModal()">
                                     <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
                                     </svg>
@@ -1245,7 +1281,7 @@
                         <div class="card" style="grid-column: 1 / -1;">
                             <div class="card-header">
                                 <h3>Medical Conditions</h3>
-                                <button class="button button-primary button-sm" onclick="app.showToast('Add condition')">
+                                <button class="button button-primary button-sm" onclick="app.showConditionModal()">
                                     <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
                                     </svg>
@@ -1269,7 +1305,7 @@
                         <div class="card" style="grid-column: 1 / -1;">
                             <div class="card-header">
                                 <h3>Current Medications</h3>
-                                <button class="button button-primary button-sm" onclick="app.showToast('Add medication')">
+                                <button class="button button-primary button-sm" onclick="app.showMedicationModal()">
                                     <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
                                     </svg>
@@ -1306,7 +1342,7 @@
                         <div class="card" style="grid-column: 1 / -1;">
                             <div class="card-header">
                                 <h3>Medical Allergies</h3>
-                                <button class="button button-primary button-sm" onclick="app.showToast('Add allergy')">
+                                <button class="button button-primary button-sm" onclick="app.showAllergyModal()">
                                     <svg class="icon icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
                                     </svg>
@@ -1566,6 +1602,24 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
                         </svg>
                         <span>Account</span>
+                    </a>
+
+                    <div style="padding: var(--spacing-4) var(--spacing-4) var(--spacing-2); margin-top: var(--spacing-4); border-top: 1px solid var(--tc-color-neutral-200);">
+                        <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-on-surface-secondary); margin-bottom: var(--spacing-2);">Services</div>
+                    </div>
+
+                    <a href="#" class="nav-item" onclick="app.navigateTo('get-scheduled-view'); return false;">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        <span>Appointments</span>
+                    </a>
+
+                    <a href="#" class="nav-item" onclick="app.navigateTo('additional-services-view'); return false;">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                        </svg>
+                        <span>Services</span>
                     </a>
                 </nav>
             </aside>
@@ -1943,6 +1997,184 @@
             </div>
             <div class="modal-footer">
                 <button class="button button-primary" onclick="app.hideTermsModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Provider Modal -->
+    <div id="provider-modal" class="modal">
+        <div class="modal-overlay" onclick="app.hideProviderModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="provider-modal-title">Add Provider</h3>
+                <button class="icon-button" onclick="app.hideProviderModal()">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-wrapper" style="margin-bottom: var(--spacing-4);">
+                    <label for="provider-name" class="input-label">Provider Name *</label>
+                    <input type="text" id="provider-name" class="input" placeholder="Dr. John Smith" required>
+                </div>
+                <div class="input-wrapper" style="margin-bottom: var(--spacing-4);">
+                    <label for="provider-specialty" class="input-label">Specialty *</label>
+                    <input type="text" id="provider-specialty" class="input" placeholder="Cardiology" required>
+                </div>
+                <div class="input-wrapper" style="margin-bottom: var(--spacing-4);">
+                    <label for="provider-practice" class="input-label">Practice/Hospital</label>
+                    <input type="text" id="provider-practice" class="input" placeholder="City General Hospital">
+                </div>
+                <div class="input-wrapper">
+                    <label for="provider-phone" class="input-label">Phone Number</label>
+                    <input type="tel" id="provider-phone" class="input" placeholder="(555) 123-4567">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="button button-secondary" onclick="app.hideProviderModal()">Cancel</button>
+                <button class="button button-primary" onclick="app.saveProvider()">Save Provider</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Emergency Contact Modal -->
+    <div id="emergency-contact-modal" class="modal">
+        <div class="modal-overlay" onclick="app.hideEmergencyContactModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="emergency-contact-modal-title">Add Emergency Contact</h3>
+                <button class="icon-button" onclick="app.hideEmergencyContactModal()">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-wrapper" style="margin-bottom: var(--spacing-4);">
+                    <label for="emergency-contact-name" class="input-label">Name *</label>
+                    <input type="text" id="emergency-contact-name" class="input" placeholder="John Doe" required>
+                </div>
+                <div class="input-wrapper" style="margin-bottom: var(--spacing-4);">
+                    <label for="emergency-contact-relationship" class="input-label">Relationship *</label>
+                    <input type="text" id="emergency-contact-relationship" class="input" placeholder="Spouse" required>
+                </div>
+                <div class="input-wrapper">
+                    <label for="emergency-contact-phone" class="input-label">Phone Number *</label>
+                    <input type="tel" id="emergency-contact-phone" class="input" placeholder="(555) 123-4567" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="button button-secondary" onclick="app.hideEmergencyContactModal()">Cancel</button>
+                <button class="button button-primary" onclick="app.saveEmergencyContact()">Save Contact</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Medical Condition Modal -->
+    <div id="condition-modal" class="modal">
+        <div class="modal-overlay" onclick="app.hideConditionModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="condition-modal-title">Add Medical Condition</h3>
+                <button class="icon-button" onclick="app.hideConditionModal()">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-wrapper" style="margin-bottom: var(--spacing-4);">
+                    <label for="condition-name" class="input-label">Condition Name *</label>
+                    <input type="text" id="condition-name" class="input" placeholder="Hypertension" required>
+                </div>
+                <div class="input-wrapper">
+                    <label for="condition-severity" class="input-label">Severity</label>
+                    <select id="condition-severity" class="input">
+                        <option value="mild">Mild</option>
+                        <option value="moderate" selected>Moderate</option>
+                        <option value="severe">Severe</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="button button-secondary" onclick="app.hideConditionModal()">Cancel</button>
+                <button class="button button-primary" onclick="app.saveCondition()">Save Condition</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Medication Modal -->
+    <div id="medication-modal" class="modal">
+        <div class="modal-overlay" onclick="app.hideMedicationModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="medication-modal-title">Add Medication</h3>
+                <button class="icon-button" onclick="app.hideMedicationModal()">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-wrapper" style="margin-bottom: var(--spacing-4);">
+                    <label for="medication-name" class="input-label">Medication Name *</label>
+                    <input type="text" id="medication-name" class="input" placeholder="Lisinopril" required>
+                </div>
+                <div class="input-wrapper" style="margin-bottom: var(--spacing-4);">
+                    <label for="medication-dosage" class="input-label">Dosage *</label>
+                    <input type="text" id="medication-dosage" class="input" placeholder="10mg" required>
+                </div>
+                <div class="input-wrapper" style="margin-bottom: var(--spacing-4);">
+                    <label for="medication-frequency" class="input-label">Frequency *</label>
+                    <input type="text" id="medication-frequency" class="input" placeholder="Once daily" required>
+                </div>
+                <div class="input-wrapper">
+                    <label for="medication-purpose" class="input-label">Purpose</label>
+                    <input type="text" id="medication-purpose" class="input" placeholder="Blood pressure management">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="button button-secondary" onclick="app.hideMedicationModal()">Cancel</button>
+                <button class="button button-primary" onclick="app.saveMedication()">Save Medication</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Allergy Modal -->
+    <div id="allergy-modal" class="modal">
+        <div class="modal-overlay" onclick="app.hideAllergyModal()">
+</div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="allergy-modal-title">Add Allergy</h3>
+                <button class="icon-button" onclick="app.hideAllergyModal()">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-wrapper" style="margin-bottom: var(--spacing-4);">
+                    <label for="allergy-name" class="input-label">Allergen *</label>
+                    <input type="text" id="allergy-name" class="input" placeholder="Penicillin" required>
+                </div>
+                <div class="input-wrapper" style="margin-bottom: var(--spacing-4);">
+                    <label for="allergy-severity" class="input-label">Severity</label>
+                    <select id="allergy-severity" class="input">
+                        <option value="mild">Mild</option>
+                        <option value="moderate" selected>Moderate</option>
+                        <option value="severe">Severe</option>
+                    </select>
+                </div>
+                <div class="input-wrapper">
+                    <label for="allergy-reaction" class="input-label">Reaction</label>
+                    <input type="text" id="allergy-reaction" class="input" placeholder="Rash, hives">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="button button-secondary" onclick="app.hideAllergyModal()">Cancel</button>
+                <button class="button button-primary" onclick="app.saveAllergy()">Save Allergy</button>
             </div>
         </div>
     </div>

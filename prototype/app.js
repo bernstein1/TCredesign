@@ -235,6 +235,106 @@ const app = {
         }
     },
 
+    // Provider Modal
+    showProviderModal() {
+        const modal = document.getElementById('provider-modal');
+        if (modal) {
+            modal.classList.add('active');
+        }
+    },
+
+    hideProviderModal() {
+        const modal = document.getElementById('provider-modal');
+        if (modal) {
+            modal.classList.remove('active');
+        }
+    },
+
+    saveProvider() {
+        this.hideProviderModal();
+        this.showToast('Provider saved successfully');
+    },
+
+    // Emergency Contact Modal
+    showEmergencyContactModal() {
+        const modal = document.getElementById('emergency-contact-modal');
+        if (modal) {
+            modal.classList.add('active');
+        }
+    },
+
+    hideEmergencyContactModal() {
+        const modal = document.getElementById('emergency-contact-modal');
+        if (modal) {
+            modal.classList.remove('active');
+        }
+    },
+
+    saveEmergencyContact() {
+        this.hideEmergencyContactModal();
+        this.showToast('Emergency contact saved successfully');
+    },
+
+    // Medical Condition Modal
+    showConditionModal() {
+        const modal = document.getElementById('condition-modal');
+        if (modal) {
+            modal.classList.add('active');
+        }
+    },
+
+    hideConditionModal() {
+        const modal = document.getElementById('condition-modal');
+        if (modal) {
+            modal.classList.remove('active');
+        }
+    },
+
+    saveCondition() {
+        this.hideConditionModal();
+        this.showToast('Medical condition saved successfully');
+    },
+
+    // Medication Modal
+    showMedicationModal() {
+        const modal = document.getElementById('medication-modal');
+        if (modal) {
+            modal.classList.add('active');
+        }
+    },
+
+    hideMedicationModal() {
+        const modal = document.getElementById('medication-modal');
+        if (modal) {
+            modal.classList.remove('active');
+        }
+    },
+
+    saveMedication() {
+        this.hideMedicationModal();
+        this.showToast('Medication saved successfully');
+    },
+
+    // Allergy Modal
+    showAllergyModal() {
+        const modal = document.getElementById('allergy-modal');
+        if (modal) {
+            modal.classList.add('active');
+        }
+    },
+
+    hideAllergyModal() {
+        const modal = document.getElementById('allergy-modal');
+        if (modal) {
+            modal.classList.remove('active');
+        }
+    },
+
+    saveAllergy() {
+        this.hideAllergyModal();
+        this.showToast('Allergy information saved successfully');
+    },
+
     // Toast notifications
     showToast(message, type = 'success') {
         const container = document.getElementById('toast-container');
