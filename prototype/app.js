@@ -151,6 +151,90 @@ const app = {
         this.showToast('Notifications panel coming soon!');
     },
 
+    // Case resolution confirmation
+    showResolveCaseDialog() {
+        const modal = document.getElementById('resolve-case-modal');
+        if (modal) {
+            modal.classList.add('active');
+        }
+    },
+
+    hideResolveCaseDialog() {
+        const modal = document.getElementById('resolve-case-modal');
+        if (modal) {
+            modal.classList.remove('active');
+        }
+    },
+
+    confirmResolveCase() {
+        this.hideResolveCaseDialog();
+        this.showToast('Case marked as resolved');
+        setTimeout(() => {
+            this.navigateTo('cases-view');
+        }, 1000);
+    },
+
+    // Terms and Conditions modal
+    showTermsModal() {
+        const modal = document.getElementById('terms-modal');
+        if (modal) {
+            modal.classList.add('active');
+        }
+    },
+
+    hideTermsModal() {
+        const modal = document.getElementById('terms-modal');
+        if (modal) {
+            modal.classList.remove('active');
+        }
+    },
+
+    // Wallet tab switching
+    switchWalletTab(tabName) {
+        // Hide all wallet tabs
+        document.querySelectorAll('.wallet-tab-content').forEach(tab => {
+            tab.style.display = 'none';
+        });
+
+        // Show selected tab
+        const selectedTab = document.getElementById(`wallet-${tabName}-tab`);
+        if (selectedTab) {
+            selectedTab.style.display = 'block';
+        }
+
+        // Update tab button states
+        const walletView = document.getElementById('wallet-view');
+        if (walletView) {
+            const tabs = walletView.querySelectorAll('.tabs .tab');
+            tabs.forEach((tab, index) => {
+                tab.classList.remove('active');
+            });
+
+            // Determine which tab index to activate
+            const tabIndex = {
+                'cards': 0,
+                'medical-id': 1,
+                'payment': 2,
+                'fsa': 3
+            }[tabName];
+
+            if (tabs[tabIndex]) {
+                tabs[tabIndex].classList.add('active');
+            }
+        }
+    },
+
+    // Settings tab switching
+    switchSettingsTab(tabName) {
+        // For now, just show a toast (we only implemented security tab)
+        if (tabName === 'security') {
+            document.getElementById('security-tab').style.display = 'block';
+            this.showToast('Security settings');
+        } else {
+            this.showToast(`${tabName.charAt(0).toUpperCase() + tabName.slice(1)} settings coming soon`);
+        }
+    },
+
     // Toast notifications
     showToast(message, type = 'success') {
         const container = document.getElementById('toast-container');
