@@ -260,26 +260,26 @@
                                 </svg>
                                 <span>Add emergency contact</span>
                             </div>
-                            <div class="task" onclick="app.navigateTo('settings-view')">
+                            <div class="task" onclick="if(confirm('Navigate to account settings to add dependent information?')) app.navigateTo('settings-view')" style="cursor: pointer;" title="Add your family members to extend coverage and ensure they can access benefits too.">
                                 <svg class="icon text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <circle cx="12" cy="12" r="10" stroke-width="2"/>
                                 </svg>
                                 <span>Add dependent information</span>
-                                <button class="button button-sm button-tertiary">Add</button>
+                                <button class="button button-sm button-tertiary" onclick="event.stopPropagation(); if(confirm('Navigate to account settings to add dependent information?')) app.navigateTo('settings-view')">Add</button>
                             </div>
-                            <div class="task" onclick="app.navigateTo('documents-view')">
+                            <div class="task" onclick="if(confirm('Navigate to documents to upload your insurance card?')) app.navigateTo('documents-view')" style="cursor: pointer;" title="Upload your insurance card for easy access during doctor visits and when filing claims.">
                                 <svg class="icon text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <circle cx="12" cy="12" r="10" stroke-width="2"/>
                                 </svg>
                                 <span>Upload insurance card</span>
-                                <button class="button button-sm button-tertiary">Upload</button>
+                                <button class="button button-sm button-tertiary" onclick="event.stopPropagation(); if(confirm('Navigate to documents to upload your insurance card?')) app.navigateTo('documents-view')">Upload</button>
                             </div>
-                            <div class="task">
+                            <div class="task" onclick="app.navigateTo('get-scheduled-view')" style="cursor: pointer;" title="Schedule a Benefits Refresher consultation to understand and maximize your plan's value.">
                                 <svg class="icon text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <circle cx="12" cy="12" r="10" stroke-width="2"/>
                                 </svg>
                                 <span>Review your benefits</span>
-                                <button class="button button-sm button-tertiary">Review</button>
+                                <button class="button button-sm button-tertiary" onclick="event.stopPropagation(); app.navigateTo('get-scheduled-view')">Review</button>
                             </div>
                         </div>
                     </div>
