@@ -335,6 +335,76 @@ const app = {
         this.showToast('Allergy information saved successfully');
     },
 
+    // Document Upload Simulation
+    simulateDocumentUpload() {
+        const progressArea = document.getElementById('upload-progress-area');
+        const progressList = document.getElementById('upload-progress-list');
+
+        if (!progressArea || !progressList) return;
+
+        // Show progress area
+        progressArea.style.display = 'block';
+
+        // Create sample file names
+        const fileName = 'Insurance_Card_2024.pdf';
+
+        // Create upload item
+        const uploadItem = document.createElement('div');
+        uploadItem.style.padding = 'var(--spacing-4)';
+        uploadItem.style.background = 'var(--tc-color-neutral-50)';
+        uploadItem.style.borderRadius = 'var(--radius-md)';
+        uploadItem.innerHTML = `
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-2);">
+                <div style="display: flex; align-items: center; gap: var(--spacing-2); flex: 1;">
+                    <svg class="icon icon-sm" style="color: var(--tc-color-indigo-600);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                    </svg>
+                    <div style="flex: 1;">
+                        <div style="font-weight: var(--font-weight-semibold); font-size: var(--font-size-sm); margin-bottom: 0.25rem;">${fileName}</div>
+                        <div class="upload-status" style="font-size: var(--font-size-xs); color: var(--color-text-on-surface-secondary);">Uploading...</div>
+                    </div>
+                </div>
+                <div class="upload-percentage" style="font-weight: var(--font-weight-semibold); color: var(--tc-color-indigo-600);">0%</div>
+            </div>
+            <div style="width: 100%; height: 6px; background: var(--tc-color-neutral-200); border-radius: 3px; overflow: hidden;">
+                <div class="upload-progress-bar" style="width: 0%; height: 100%; background: linear-gradient(90deg, var(--tc-color-indigo-600), var(--tc-color-teal-600)); transition: width 0.3s ease;"></div>
+            </div>
+        `;
+
+        progressList.appendChild(uploadItem);
+
+        // Simulate upload progress
+        const progressBar = uploadItem.querySelector('.upload-progress-bar');
+        const percentage = uploadItem.querySelector('.upload-percentage');
+        const status = uploadItem.querySelector('.upload-status');
+
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += Math.random() * 30;
+            if (progress > 100) progress = 100;
+
+            progressBar.style.width = `${progress}%`;
+            percentage.textContent = `${Math.round(progress)}%`;
+
+            if (progress >= 100) {
+                clearInterval(interval);
+                status.textContent = 'Upload complete!';
+                status.style.color = 'var(--tc-color-success-600)';
+                percentage.style.color = 'var(--tc-color-success-600)';
+                progressBar.style.background = 'var(--tc-color-success-600)';
+
+                // Show success toast
+                this.showToast(`${fileName} uploaded successfully`);
+
+                // Hide progress area after 3 seconds
+                setTimeout(() => {
+                    progressArea.style.display = 'none';
+                    progressList.innerHTML = '';
+                }, 3000);
+            }
+        }, 200);
+    },
+
     // Toast notifications
     showToast(message, type = 'success') {
         const container = document.getElementById('toast-container');
